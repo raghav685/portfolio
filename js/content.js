@@ -1,60 +1,91 @@
-/* All portfolio copy lives here. Both the animated site and Paper mode render from it.
-   Items marked TBC are waiting on Raghav's answers. */
+/* All portfolio copy lives here. Both the animated site and Paper mode render from it. */
 window.SITE = {
-  first: "Raghav",
-  last: "TBC",
+  first: "Manjunath",
+  last: "Chandrashekar",
+  preferred: "Raghav",
   handle: "RAGHAV/BUILD",
-  tagline: "[ Growth Marketer / Web Developer / Motion Designer ]",
-  intro: "I build the things that get a business found: AI search visibility, SEO, paid search, fast websites and the films that sell them.",
+  url: "https://raghav685.github.io/portfolio/",
+  tagline: "[ Marketing Manager / AI Automation Specialist / Web Developer ]",
+  intro: "London based marketing manager. I help businesses get found through search, AI answers, paid media and automation, then build the websites and films that turn that attention into leads.",
   origin: "London, UK",
   coords: "51.51°N 0.09°W",
-  cv: "",
-  email: "TBC",
+  cv: "assets/docs/Manjunath-Chandrashekar-CV.pdf",
+  email: "manj6911@gmail.com",
   socials: [
-    { name: "LinkedIn", url: "https://www.linkedin.com/", handle: "TBC" },
-    { name: "GitHub", url: "https://github.com/raghav685", handle: "@raghav685" },
-    { name: "Instagram", url: "https://www.instagram.com/", handle: "TBC" }
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/manjunath-chandrashekar78/", handle: "manjunath-chandrashekar78" },
+    { name: "GitHub", url: "https://github.com/raghav685", handle: "@raghav685" }
   ],
 
   about: [
-    ["(me)", "TBC: one or two lines on who you are, where you studied and what drives you."],
-    ["(now)", "At Annaizu I run search and growth for an immigration and compliance platform: SEO, AI search visibility, Google Ads, product research and the video content behind it."]
+    ["(me)", "I have always been drawn to people who spot an opening where everyone else sees a dead end. A big idea is worth little until someone has the nerve to act on it, and acting on it is the part I enjoy most."],
+    ["(now)", "As Marketing Manager at Annaizu, a UK immigration and compliance platform, I run SEO, AI search visibility, paid search, content and automation. Around 20% of the business now comes from qualified leads that search brings in."]
   ],
-  languages: [["English", "TBC"], ["TBC", "TBC"]],
   education: [
-    { tag: "(degree)", school: "TBC", course: "TBC" }
+    { tag: "(masters) 2023 – 2024", school: "Queen Mary University of London", course: "Master's in Management, Marketing specialisation. Final result: Merit (2:1)" }
+  ],
+  awards: [
+    ["First place", "Several college debate competitions on politics, religion and humanity"],
+    ["Recognition", "Honoured by local government in India as part of a COVID-19 frontline volunteer team"],
+    ["Cricket", "Represented my division at division level"]
   ],
 
-  ticker: ["SEO", "AI search / GEO", "Google Ads", "Web development", "Motion design", "Remotion", "Webflow", "Semrush", "Search Console", "Zoho CRM", "Product research", "Video editing"],
+  ticker: ["SEO", "AI search / GEO", "Google Ads", "AI automation", "LinkedIn Ads", "Content strategy", "Adobe CC", "Canva", "Web development", "Motion design", "Product requirements", "Zoho CRM", "HubSpot", "Script writing"],
 
   skills: [
-    { t: "AI search & SEO", d: "Technical audits, keyword gap clustering, on page optimisation and visibility in AI answers (GEO / AEO).", tags: ["Semrush", "Search Console", "Schema", "Content"] },
-    { t: "Paid search", d: "Google Ads account structure, keyword and intent mapping, ad copy and conversion tracking.", tags: ["Google Ads", "Tracking", "Landing pages"] },
-    { t: "Web development", d: "Fast, animated websites from design to deploy, plus CMS builds and site migrations.", tags: ["HTML/CSS/JS", "GSAP", "Webflow", "Hostinger"] },
-    { t: "Motion & video", d: "Reels, brand films and product videos, from AI generated plates to code driven edits.", tags: ["Remotion", "HyperFrames", "ffmpeg", "AI video"] },
-    { t: "Product", d: "Competitor research, requirements documents and roadmaps for a compliance SaaS.", tags: ["PRDs", "Roadmaps", "UX"] },
-    { t: "CRM & automation", d: "Lead data, imports, enrichment and workflow automation.", tags: ["Zoho CRM", "Lusha", "Automation"] }
+    { t: "SEO & AI search", d: "Technical audits, keyword gap analysis, on page optimisation and getting cited in AI answers (GEO and AEO).", tags: ["OpenSEO", "Search Console", "Schema", "Webflow"] },
+    { t: "Paid media", d: "Google Ads and LinkedIn Ads campaigns, from keyword and intent mapping to ad copy, budgets and conversion tracking.", tags: ["Google Ads", "LinkedIn Ads", "Tracking"] },
+    { t: "AI automation", d: "AI agents and workflows that take repetitive work off the team: research, reporting, lead handling and content operations.", tags: ["AI agents", "Workflows", "Prompting", "MCP"] },
+    { t: "Content & social", d: "Content plans, copywriting, newsletters and LinkedIn pages that build an audience and bring in enquiries.", tags: ["Copywriting", "LinkedIn", "Email", "Newsletters"] },
+    { t: "Design", d: "Brand consistent social posts, ads, print and presentation material.", tags: ["Adobe Photoshop", "Adobe InDesign", "Canva"] },
+    { t: "Motion & video", d: "Reels, brand films and product videos, mixing AI generated footage with code driven edits.", tags: ["Remotion", "HyperFrames", "Premiere", "AI video"] },
+    { t: "Web development", d: "Fast, animated marketing sites from first design to launch, plus CMS builds and migrations.", tags: ["HTML/CSS/JS", "GSAP", "Webflow", "Hostinger"] },
+    { t: "Product & research", d: "Competitor analysis, product requirement documents and roadmaps that turn market gaps into features.", tags: ["PRDs", "Roadmaps", "Market research"] },
+    { t: "CRM & lead generation", d: "Lead sourcing, enrichment, list imports and nurturing that keep the sales pipeline moving.", tags: ["Zoho CRM", "HubSpot", "Lusha"] }
   ],
 
   works: [
-    { k: "Annaizu", t: "AI search visibility", d: "Getting an immigration and compliance platform cited in AI answers as well as ranked on Google.", tags: ["GEO / AEO", "Content"], img: "", url: "" },
-    { k: "Annaizu", t: "SEO: immigration & compliance", d: "Keyword gap analysis across 8,000+ competitor terms, clustered to real services and mapped to pages.", tags: ["Semrush", "Search Console", "Webflow"], img: "", url: "" },
-    { k: "Annaizu", t: "Google Ads account", d: "Search campaigns for sponsor licence, right to work and DBS check intent.", tags: ["Google Ads", "Paid search"], img: "", url: "" },
-    { k: "Freelance", t: "Bharathi Associates", d: "Website for an industrial equipment supplier: pumps, diffusers, blowers and wastewater treatment.", tags: ["Web development", "Anime.js"], img: "assets/img/work-bharathi.jpg", url: "https://bharathi-associates.com/" },
-    { k: "Personal", t: "Fitness project", d: "Baba Yaga Fitness: a training app with an 873 movement exercise library, workout logging, programmes and progress tracking.", tags: ["Web app", "Fitness"], img: "assets/img/work-fitness.jpg", url: "https://palegreen-oyster-544450.hostingersite.com/" }
+    { k: "Annaizu", t: "Cited by Google's AI Overview", d: "For \"best sponsor licence compliance software UK\", Google's AI Overview lists Annaizu as its first source, and the site also ranks in the organic results underneath.", tags: ["AI search", "GEO / AEO"], img: "assets/img/work-annaizu-ai.jpg", url: "" },
+    { k: "Annaizu", t: "SEO audit: immigration & compliance", d: "PENDING_AUDIT", tags: ["OpenSEO", "Technical SEO", "Content"], img: "", url: "", pending: true },
+    { k: "Freelance", t: "Bharathi Associates", d: "Website for an industrial equipment supplier of pumps, blowers and diffusers for wastewater treatment projects.", tags: ["Web development", "Anime.js"], img: "assets/img/work-bharathi.jpg", url: "https://bharathi-associates.com/" },
+    { k: "Personal", t: "Baba Yaga Fitness", d: "A training web app with an exercise library of 873 movements, workout logging, programmes and progress tracking.", tags: ["Web app", "Fitness"], img: "assets/img/work-fitness.jpg", url: "https://palegreen-oyster-544450.hostingersite.com/" }
   ],
 
-  quote: ["Find the signal,", "build it fast,", "make it move."],
-  manifesto: "Search, code and film are the same job to me: understand what people are really looking for, then build the clearest thing that answers it.",
-  now: ["AI search", "Google Ads", "Remotion", "Webflow", "Strength training"],
+  reels: [
+    { k: "Annaizu", t: "Keep the Licence", d: "A video game style reel that turns a surprise Home Office audit into a mission the HR team wins.", src: "assets/video/reel-annaizu.mp4" },
+    { k: "VeggiGo, freelance", t: "86'd", d: "A kitchen ticket story for a friend's fresh produce supplier launching across central London.", src: "assets/video/reel-veggigo.mp4" }
+  ],
+
+  writing: {
+    k: "MAANAV", ver: "Shooting script, Kannada",
+    t: "MAANAV: a short film script",
+    d: "A shot by shot shooting script covering camera angles, sound design, cuts and dialogue for a short film about finding humanity in a crowd that has lost it.",
+    tags: ["Script writing", "Short film", "Direction"],
+    pdf: "assets/docs/MAANAV-shooting-script.pdf",
+    pages: ["assets/img/maanav-p1.jpg", "assets/img/maanav-p2.jpg", "assets/img/maanav-p3.jpg", "assets/img/maanav-p4.jpg"]
+  },
+
+  quote: ["See the opening,", "back the idea,", "build it anyway."],
+  manifesto: "The people I learn from rarely fit the mould. They question the obvious, take the unpopular route and make the thing others said could not be done. You can argue with them, but you cannot overlook them. That is the standard I hold my own work to.",
+  now: ["AI search", "Marketing automation", "Google Ads", "Remotion", "Strength training"],
 
   jobs: [
-    { r: "TBC role", o: "Annaizu", tag: "Company" },
-    { r: "Web developer", o: "Bharathi Associates", tag: "Freelance" }
+    { r: "Marketing Manager", o: "Annaizu", when: "2026 – Present", d: "Lead SEO, AI search, paid media, content and automation. Promoted from Marketing Executive (2025 – 2026).", tag: "London" },
+    { r: "Sales Associate", o: "Greene King", when: "2024 – 2025", d: "Customer facing sales and service in a busy hospitality setting.", tag: "London" },
+    { r: "Marketing Associate, Digital & Growth", o: "Bharathi Associates", when: "2022 – 2023", d: "Digital campaigns and growth marketing for an industrial equipment supplier.", tag: "India" },
+    { r: "Marketing Associate", o: "IFI Tech Solutions", when: "2020 – 2022", d: "Joined as a sales and marketing intern in 2020 and moved up to Marketing Associate in 2021.", tag: "India" }
   ],
-  soft: ["Project management", "Cross team communication", "Research", "Fast iteration"],
-  certs: ["TBC"],
+  freelance: [
+    { r: "Web developer", o: "Bharathi Associates website" },
+    { r: "Reels & motion", o: "VeggiGo" }
+  ],
+  soft: ["Leadership", "Public speaking & debate", "Stakeholder communication", "Research", "Fast iteration"],
+  certs: ["Digital Marketing", "Google", "HubSpot", "LinkedIn", "Adobe InDesign"],
 
-  life: { title: "Train hard /", text: "Outside of work I lift. Fitness keeps me disciplined, and it is the reason my personal project exists." },
-  hobbies: ["Gym & Fitness", "Working out", "Film editing", "Web design"]
+  life: {
+    title: "Lift heavy /",
+    text: "Training keeps me disciplined, and the gym is where I clear my head. It is also why I built Baba Yaga Fitness, the training app in my work above.",
+    clip: "assets/video/gym-deadlift.mp4", poster: "assets/img/gym-deadlift-poster.jpg",
+    photos: ["assets/img/gym-kettlebell.jpg", "assets/img/gym-legpress.jpg"]
+  },
+  hobbies: ["Strength training", "Cricket", "Debating", "Script writing", "Film editing", "Web design"]
 };

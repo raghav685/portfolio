@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Raghav: growth marketer, web developer and motion designer in London. Paper mode portfolio.">
   <meta name="theme-color" content="#f1efe9">
-  <title>Raghav — Paper</title>
+  <title>Manjunath (Raghav) Chandrashekar — Paper</title>
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,20 +49,25 @@
     const S = window.SITE;
     const e = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
     const tags = (a) => `<div class="tags">${a.map((t) => `<span>${e(t)}</span>`).join('')}</div>`;
-    const name = [S.first, S.last].filter((x) => x && x !== 'TBC').join(' ');
+    const name = `${S.first} ${S.last}`;
+    const P = (u) => /^https?:/.test(u) ? u : '../' + u;
     document.getElementById('paper').innerHTML = `
-      <img class="me" src="../assets/img/me.jpg" alt="${e(S.first)}">
+      <img class="me" src="../assets/img/me.jpg" alt="${e(S.preferred)}">
       <p class="mono">${e(S.tagline)}</p>
       <h1>${e(name)}</h1>
+      <p class="mono">Preferred name: <b>${e(S.preferred)}</b></p>
       <p class="lead">${e(S.intro)}</p>
-      <p class="links mono">${e(S.origin)} · ${S.socials.map((s) => `<a href="${e(s.url)}">${e(s.name)}</a>`).join(' ')}${S.cv ? ` · <a href="../${e(S.cv)}">CV</a>` : ''}</p>
+      <p class="links mono">${e(S.origin)} · <a href="mailto:${e(S.email)}">${e(S.email)}</a> · ${S.socials.map((s) => `<a href="${e(s.url)}">${e(s.name)}</a>`).join(' · ')} · <a href="${P(S.cv)}">CV (PDF)</a></p>
       <h2>About</h2>${S.about.map(([k, t]) => `<p>${e(t)}</p>`).join('')}
+      <h2>Experience</h2>${S.jobs.map((j) => `<div class="item"><div class="mono">${e(j.when)} · ${e(j.tag)}</div><h3>${e(j.r)}, ${e(j.o)}</h3><p>${e(j.d)}</p></div>`).join('')}
+      <div class="item"><div class="mono">Freelance</div>${S.freelance.map((f) => `<h3>${e(f.r)}, ${e(f.o)}</h3>`).join('')}</div>
+      <h2>Education</h2>${S.education.map((x) => `<div class="item"><div class="mono">${e(x.tag)}</div><h3>${e(x.school)}</h3><p>${e(x.course)}</p></div>`).join('')}
       <h2>Skills</h2>${S.skills.map((s) => `<div class="item"><h3>${e(s.t)}</h3><p>${e(s.d)}</p>${tags(s.tags)}</div>`).join('')}
-      <h2>Work</h2>${S.works.map((w) => `<div class="item"><div class="mono">${e(w.k)}</div><h3>${w.url ? `<a href="${e(w.url)}">${e(w.t)} ↗</a>` : e(w.t)}</h3><p>${e(w.d)}</p>${tags(w.tags)}</div>`).join('')}
-      <h2>Experience</h2>${S.jobs.map((j) => `<div class="row"><span><b>${e(j.r)}</b>, ${e(j.o)}</span><span class="mono">${e(j.tag)}</span></div>`).join('')}
-      <h2>Education</h2>${S.education.map((x) => `<div class="row"><span><b>${e(x.school)}</b><br>${e(x.course)}</span></div>`).join('')}
-      <h2>Languages</h2>${S.languages.map(([l, v]) => `<div class="row"><span>${e(l)}</span><span class="mono">${e(v)}</span></div>`).join('')}
+      <h2>Work</h2>${S.works.filter((w) => !w.pending).map((w) => `<div class="item"><div class="mono">${e(w.k)}</div><h3>${w.url ? `<a href="${e(w.url)}">${e(w.t)} ↗</a>` : e(w.t)}</h3><p>${e(w.d)}</p>${tags(w.tags)}</div>`).join('')}
+      <h2>Reels</h2>${S.reels.map((r) => `<div class="item"><div class="mono">${e(r.k)}</div><h3><a href="${P(r.src)}">${e(r.t)} ↗</a></h3><p>${e(r.d)}</p></div>`).join('')}
+      <h2>Writing</h2><div class="item"><h3><a href="${P(S.writing.pdf)}">${e(S.writing.t)} ↗</a></h3><p>${e(S.writing.d)}</p></div>
       <h2>Certifications</h2>${tags(S.certs)}
+      <h2>Awards &amp; recognition</h2>${S.awards.map(([k, v]) => `<div class="row"><span>${e(v)}</span><span class="mono">${e(k)}</span></div>`).join('')}
       <h2>Outside work</h2><p>${e(S.life.text)}</p>${tags(S.hobbies)}
       <h2>Contact</h2><p><a href="mailto:${e(S.email)}">${e(S.email)}</a></p>
       <footer class="mono">© ${new Date().getFullYear()} ${e(name)}</footer>`;
