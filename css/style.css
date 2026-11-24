@@ -120,8 +120,10 @@ html.hero-clean .hero-shade, html.hero-clean #heroVideo .rec, html.hero-clean #h
 .uni .mono { color: var(--dim) }
 .uni .t { font-size: 20px } .uni .s { color: var(--mute); font-size: 14px }
 
-.ticker { position: relative; overflow: hidden; border-block: 1px solid var(--line); padding: 22px 0; z-index: 2 }
-.trk { display: flex; gap: 32px; width: max-content; animation: tick 40s linear infinite; font-family: var(--display); font-size: clamp(32px, 5vw, 64px); text-transform: uppercase; line-height: 1 }
+.ticker { position: relative; overflow: hidden; border-block: 1px solid var(--line); padding: 22px 0; z-index: 2; display: grid; gap: 14px }
+.trk { display: flex; gap: 32px; width: max-content; animation: tick calc(var(--n, 14) * 3.2s) linear infinite; font-family: var(--display); font-size: clamp(32px, 5vw, 64px); text-transform: uppercase; line-height: 1 }
+.trk.rev { animation-direction: reverse; font-size: clamp(22px, 3vw, 40px); color: var(--mute) }
+.trk.rev i { font-size: .6em }
 .trk i { color: var(--acc); font-style: normal; font-size: .5em; align-self: center }
 @keyframes tick { to { transform: translateX(-50%) } }
 

@@ -95,6 +95,14 @@ button { font: inherit }
 .edu strong { font-weight: 700 }
 .edu span:last-child { color: var(--mute); font-size: 14px }
 
+/* ticker */
+.ticker { position: relative; z-index: 1; overflow: hidden; display: grid; gap: 10px; padding: 20px 0; border-block: 1px solid var(--line); background: rgba(255, 255, 255, .4) }
+.trk { display: flex; align-items: center; gap: 22px; width: max-content; animation: tick calc(var(--n, 14) * 3.2s) linear infinite; font: 900 clamp(22px, 3.2vw, 40px)/1.1 var(--display); text-transform: uppercase; letter-spacing: -.01em }
+.trk.rev { animation-direction: reverse; font: 500 clamp(13px, 1.4vw, 16px)/1.2 var(--mono); letter-spacing: .14em; color: var(--mute) }
+.trk i { font-style: normal; color: var(--acc); font-weight: 400 }
+@keyframes tick { to { transform: translateX(-50%) } }
+@media (prefers-reduced-motion: reduce) { .trk { animation: none } }
+
 /* skills */
 .kn-row { position: relative; display: grid; grid-template-columns: 72px minmax(0, 4fr) minmax(0, 7fr); gap: clamp(16px, 3vw, 40px); align-items: start; padding: 26px 0; border-top: 1px solid var(--line) }
 .kn-row:last-child { border-bottom: 1px solid var(--line) }

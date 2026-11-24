@@ -62,7 +62,9 @@
       </div>
     </div>
   </section>
-  <div class="ticker" aria-hidden="true"><div class="trk">${[...S.ticker, ...S.ticker].map((t) => `<span>${esc(t)}</span><i>✦</i>`).join('')}</div></div>`;
+  <div class="ticker" aria-label="Skills and tools">
+    ${[[S.ticker, ''], [S.tools, ' rev']].map(([list, dir]) => `<div class="trk${dir}" style="--n:${list.length}">${[...list, ...list].map((t, i) => `<span${i >= list.length ? ' aria-hidden="true"' : ''}>${esc(t)}</span><i aria-hidden="true">✦</i>`).join('')}</div>`).join('')}
+  </div>`;
 
   const skills = `
   <section id="skills" class="scene">

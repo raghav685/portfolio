@@ -174,7 +174,8 @@
   </section>
   <footer class="foot"><div class="wrap mono"><span>© ${new Date().getFullYear()} ${e(name)}</span><a href="../" class="acc" id="toAnim2">Animated mode ↗</a></div></footer>`;
 
-  document.getElementById('paper').innerHTML = hero + about + skills + work + phil + exp + life + writing + player + contact;
+  const ticker = `<div class="ticker" aria-label="Skills and tools">${[[S.ticker, ''], [S.tools, ' rev']].map(([list, dir]) => `<div class="trk${dir}" style="--n:${list.length}">${[...list, ...list].map((t, i) => `<span${i >= list.length ? ' aria-hidden="true"' : ''}>${e(t)}</span><i aria-hidden="true">/</i>`).join('')}</div>`).join('')}</div>`;
+  document.getElementById('paper').innerHTML = hero + about + ticker + skills + work + phil + exp + life + writing + player + contact;
   document.getElementById('toAnim2').addEventListener('click', () => { try { sessionStorage.setItem('mode', 'animated'); } catch (_) {} });
 
   // reveal on scroll

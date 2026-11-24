@@ -30,7 +30,8 @@ window.SITE = {
     ["Cricket", "Played competitive cricket at division level"]
   ],
 
-  ticker: ["SEO", "AI search / GEO", "Google Ads", "AI automation", "LinkedIn Ads", "Content strategy", "Adobe CC", "Canva", "Web development", "Motion design", "Product requirements", "Zoho CRM", "HubSpot", "Script writing"],
+  ticker: ["SEO", "Technical SEO", "AI search optimisation", "GEO", "AEO", "Google Ads", "PPC", "LinkedIn Ads", "Email marketing", "Marketing automation", "AI automation", "Lead generation", "Lead pipeline", "Content marketing", "Copywriting", "Brand strategy", "Promotional strategy", "Social media", "Video editing", "Motion design", "Web development", "Link building", "Keyword research", "Conversion tracking", "Product requirements", "Market research", "Script writing"],
+  tools: ["Webflow", "WordPress", "Semrush", "OpenSEO", "Google Search Console", "Google Ads", "HubSpot", "Zoho CRM", "Lusha", "Adobe Photoshop", "Adobe InDesign", "Adobe Premiere Pro", "Canva", "Remotion", "HyperFrames", "Firebase", "Aiven", "Vercel", "IONOS", "Hostinger", "GSAP", "HTML", "CSS", "JavaScript", "Claude", "MCP"],
 
   skills: [
     { t: "SEO & AI search", d: "Technical audits, keyword gap analysis, on page optimisation and getting cited in AI answers (GEO and AEO).", tags: ["Semrush", "OpenSEO", "Search Console", "Schema"] },
@@ -39,7 +40,7 @@ window.SITE = {
     { t: "Copywriting", d: "Long form articles, newsletters, landing pages, ad copy and LinkedIn posts, written to rank, get cited by AI and convert.", tags: ["Blogs", "Newsletters", "Landing pages", "LinkedIn"] },
     { t: "Design", d: "Brand consistent social posts, ads, print and presentation material.", tags: ["Adobe Photoshop", "Adobe InDesign", "Canva"] },
     { t: "Motion & video", d: "Reels, brand films and product videos, mixing AI generated footage with code driven edits.", tags: ["Remotion", "HyperFrames", "Premiere", "AI video"] },
-    { t: "Web development", d: "Fast marketing sites and data driven web apps, from first design to launch, with the databases and hosting behind them.", tags: ["HTML/CSS/JS", "GSAP", "Webflow", "Firebase", "Aiven", "Vercel", "IONOS"] },
+    { t: "Web development", d: "Fast marketing sites and data driven web apps, from first design to launch, with the databases and hosting behind them.", tags: ["Webflow", "WordPress", "HTML/CSS/JS", "GSAP", "Firebase", "Aiven", "Vercel", "IONOS"] },
     { t: "Product & research", d: "Competitor analysis, product requirement documents and roadmaps that turn market gaps into features.", tags: ["PRDs", "Roadmaps", "Market research"] },
     { t: "CRM & lead generation", d: "Email marketing, lead sourcing, enrichment and nurturing that keep the sales pipeline moving.", tags: ["Email marketing", "Zoho CRM", "HubSpot", "Lusha"] }
   ],
