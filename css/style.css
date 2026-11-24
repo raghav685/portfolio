@@ -270,3 +270,45 @@ html.hero-clean .hero-shade, html.hero-clean #heroVideo .rec, html.hero-clean #h
   .hud .logo { font-size: 10px; letter-spacing: .12em }
 }
 @media (prefers-reduced-motion: reduce) { .grain, .trk { animation: none } }
+
+/* ---------- work: revolving deck ---------- */
+.deck { --cw: clamp(280px, 30vw, 420px); position: relative; margin-top: 8px; outline: none; user-select: none }
+.deck-stage { position: relative; height: calc(var(--cw) * 1.42); perspective: 1600px; perspective-origin: 50% 40%; touch-action: pan-y; cursor: grab }
+.deck.is-drag .deck-stage { cursor: grabbing }
+.dk-card { position: absolute; left: 50%; top: 0; width: var(--cw); height: calc(var(--cw) * 1.36); margin-left: calc(var(--cw) / -2); display: flex; flex-direction: column; background: #0b0b0b; border: 1px solid var(--line); transform-style: preserve-3d; transition: transform .9s cubic-bezier(.16, 1, .3, 1), opacity .9s cubic-bezier(.16, 1, .3, 1), filter .9s cubic-bezier(.16, 1, .3, 1), border-color .4s; will-change: transform; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .9) }
+.deck.is-drag .dk-card { transition: none }
+.dk-card.is-front { border-color: rgba(255, 94, 0, .55); box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .95), 0 0 0 1px rgba(255, 94, 0, .18) }
+.dk-card:not(.is-front) { cursor: pointer }
+.dk-card:not(.is-front) a { pointer-events: none }
+.dk-media { display: block; aspect-ratio: 16 / 10; overflow: hidden; border-bottom: 1px solid var(--line); background: #0d0d0d; flex: none }
+.dk-media img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 1.2s cubic-bezier(.16, 1, .3, 1) }
+.dk-card.is-front:hover .dk-media img { transform: scale(1.04) }
+.dk-body { display: flex; flex-direction: column; gap: 10px; padding: 18px 20px 20px; flex: 1; min-height: 0 }
+.dk-meta { color: var(--dim); font-size: 10px }
+.dk-body h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(24px, 2.1vw, 32px); line-height: .98; text-wrap: balance; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden }
+.dk-body p { color: var(--mute); font-size: 14px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden }
+.dk-body .chips { flex-wrap: nowrap; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent) }
+.dk-go { margin-top: auto; color: var(--acc); font-size: 11px; display: inline-flex; gap: 8px; align-items: center; align-self: flex-start; padding-bottom: 2px; border-bottom: 1px solid transparent; transition: border-color .2s }
+.dk-go:hover, .dk-go:focus-visible { border-color: var(--acc) }
+.dk-go.is-static { color: var(--dim) }
+.deck-ui { display: flex; align-items: center; justify-content: center; gap: 22px; margin-top: 28px; color: var(--mute) }
+.dk-btn { width: 52px; height: 52px; display: grid; place-items: center; border: 1px solid var(--line); transition: border-color .2s, color .2s, background .2s }
+.dk-btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round }
+.dk-btn:hover, .dk-btn:focus-visible { border-color: var(--acc); color: var(--acc); outline: none }
+.dk-btn:active { background: rgba(255, 94, 0, .08) }
+.dk-count { display: flex; gap: 8px; align-items: baseline; min-width: 74px; font-variant-numeric: tabular-nums }
+.dk-count b { color: var(--fg); font-size: 15px; font-weight: 500 }
+.dk-rail { display: flex; gap: 6px }
+.dk-rail { gap: 10px }
+.dk-rail i { width: 22px; height: 2px; background: var(--line); transform-origin: left center; transition: background .4s, transform .5s cubic-bezier(.16, 1, .3, 1) }
+.dk-rail i.on { background: var(--acc); transform: scaleX(1.6) }
+.deck:focus-visible .dk-card.is-front { outline: 1px solid var(--acc); outline-offset: 6px }
+@media (max-width: 600px) {
+  .deck { --cw: min(78vw, 340px) }
+  .dk-rail { display: none }
+}
+@media (prefers-reduced-motion: reduce) {
+  .deck-stage { height: auto; perspective: none; display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; cursor: auto }
+  .dk-card { position: relative; left: auto; margin: 0; flex: none; transform: none !important; opacity: 1 !important; filter: none !important; scroll-snap-align: center; transition: border-color .2s }
+  .dk-card:not(.is-front) a { pointer-events: auto }
+}

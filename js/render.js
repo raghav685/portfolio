@@ -82,15 +82,27 @@
     <div class="ghost" aria-hidden="true">WORK</div>
     <div class="wrap">
       ${head('Selected works', 'Work')}
-      <div class="pj-grid${works.length % 2 ? ' odd' : ''}">
-        ${works.map((w, i) => `
-        <article class="pj${w.wide ? ' wide' : ''}">
-          <a class="pj-media"${ext(w.url)}><img src="${esc(w.img)}" alt="${esc(w.t)}"></a>
-          <div class="pj-meta mono"><span>${pad(i + 1)} — ${esc(w.k)}</span>${w.url ? `<a${ext(w.url)}>${esc(w.cta || 'Visit site')} ↗</a>` : '<span>Case study</span>'}</div>
-          <h3>${esc(w.t)}</h3>
-          <p>${esc(w.d)}</p>
-          ${chips(w.tags)}
-        </article>`).join('')}
+      <div class="deck" data-deck tabindex="0" role="region" aria-roledescription="carousel" aria-label="Selected works">
+        <div class="deck-stage">
+          ${works.map((w, i) => `
+          <article class="dk-card" data-i="${i}" role="group" aria-roledescription="slide" aria-label="${i + 1} of ${works.length}: ${esc(w.t)}">
+            <a class="dk-media"${ext(w.url)} tabindex="-1"><img src="${esc(w.img)}" alt="${esc(w.t)}" loading="lazy" draggable="false"></a>
+            <div class="dk-body">
+              <div class="dk-meta mono"><span>${pad(i + 1)} / ${pad(works.length)} · ${esc(w.k)}</span></div>
+              <h3>${esc(w.t)}</h3>
+              <p>${esc(w.d)}</p>
+              ${chips(w.tags)}
+              ${w.url ? `<a class="dk-go mono"${ext(w.url)}>${esc(w.cta || 'Visit site')} <span aria-hidden="true">↗</span></a>` : '<span class="dk-go mono is-static">Case study</span>'}
+            </div>
+          </article>`).join('')}
+        </div>
+        <div class="deck-ui mono">
+          <button class="dk-btn" data-dir="-1" aria-label="Previous project"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <div class="dk-count" aria-live="polite"><b data-cur>01</b><span>/ ${pad(works.length)}</span></div>
+          <div class="dk-rail" aria-hidden="true">${works.map(() => '<i></i>').join('')}</div>
+          <button class="dk-btn" data-dir="1" aria-label="Next project"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
       </div>
     </div>
   </section>`;
