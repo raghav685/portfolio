@@ -352,7 +352,7 @@
     const lazy = img.getAttribute("data-src") || img.getAttribute("data-lazy-src") || img.getAttribute("data-original");
     if (lazy && (!s || s.startsWith("data:") || !img.complete || !img.naturalWidth)) {
       try {
-        s = new URL(lazy, location.href).href;
+        s = new URL(lazy, document.baseURI).href;
       } catch (_) {}
     }
     return s;
@@ -436,7 +436,7 @@
     for (const c of cands) {
       if (!c || /^(blob|mediasource):/i.test(c)) continue;
       try {
-        return new URL(c, location.href).href;
+        return new URL(c, document.baseURI).href;
       } catch (_) {}
     }
     return null;

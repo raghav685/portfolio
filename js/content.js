@@ -9,7 +9,8 @@ window.SITE = {
   intro: "London based marketing manager. I help businesses get found through search, AI answers, paid media and automation, then build the websites and films that turn that attention into leads.",
   origin: "London, UK",
   coords: "51.51°N 0.09°W",
-  cv: "assets/docs/Manjunath-Chandrashekar-CV.pdf",
+  cv: "cv/",
+  cvPdf: "assets/docs/Manjunath-Chandrashekar-CV.pdf",
   email: "manj6911@gmail.com",
   socials: [
     { name: "LinkedIn", url: "https://www.linkedin.com/in/manjunath-chandrashekar78/", handle: "manjunath-chandrashekar78" }

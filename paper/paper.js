@@ -34,7 +34,7 @@
       </div>
       <figure class="hero-ph rv"><img src="../assets/img/me.jpg" alt="${e(S.preferred)} on the Thames at night, London"><figcaption class="mono">${e(S.preferred.toUpperCase())}_2026</figcaption></figure>
     </div>
-    <a class="down mono" href="#about" aria-label="Scroll to About">↓</a>
+    <a class="down mono" href="/paper/" data-go="about" aria-label="Scroll to About">↓</a>
   </section>`;
 
   const about = `
@@ -159,7 +159,7 @@
   const rows = [
     { i: I.in, t: 'LinkedIn', s: S.socials[0].handle, u: S.socials[0].url },
     { i: I.mail, t: 'Email', s: S.email, u: `mailto:${S.email}` },
-    { i: I.doc, t: 'CV', s: 'PDF, one page', u: P(S.cv) },
+    { i: I.doc, t: 'CV', s: 'Two pages, UK format', u: P(S.cv) },
     { i: I.music, t: 'Spotify', s: S.music.label, u: S.music.url }
   ];
   const contact = `
@@ -177,6 +177,15 @@
   const ticker = `<div class="ticker" aria-label="Skills and tools">${[[S.ticker, ''], [S.tools, ' rev']].map(([list, dir]) => `<div class="trk${dir}" style="--n:${list.length}">${[...list, ...list].map((t, i) => `<span${i >= list.length ? ' aria-hidden="true"' : ''}>${e(t)}</span><i aria-hidden="true">/</i>`).join('')}</div>`).join('')}</div>`;
   document.getElementById('paper').innerHTML = hero + about + ticker + skills + work + phil + exp + life + writing + player + contact;
   document.getElementById('toAnim2').addEventListener('click', () => { try { sessionStorage.setItem('mode', 'animated'); } catch (_) {} });
+
+  // section links scroll without adding anything to the URL
+  document.addEventListener('click', (ev) => {
+    const a = ev.target.closest('[data-go]');
+    if (!a || ev.metaKey || ev.ctrlKey || ev.shiftKey) return;
+    ev.preventDefault();
+    const el = a.dataset.go === 'home' ? null : document.getElementById(a.dataset.go);
+    window.scrollTo({ top: el ? el.getBoundingClientRect().top + scrollY - 64 : 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  });
 
   // reveal on scroll
   const els = document.querySelectorAll('.rv');

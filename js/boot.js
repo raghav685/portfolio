@@ -7,6 +7,21 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const params = new URLSearchParams(location.search);
   const useSwarm = !reduced && innerWidth >= 760 && !params.has('noswarm');
+  // clean slugs: /about/, /work/ ... open the one-page site on that section
+  const section = (location.pathname.match(/^\/([a-z]+)\/?$/) || [])[1] || window.__section || '';
+  const goTo = (id, smooth) => {
+    const el = id && id !== 'home' ? document.getElementById(id) : null;
+    const y = el ? el.getBoundingClientRect().top + scrollY - 20 : 0;
+    window.scrollTo({ top: y, behavior: smooth ? 'smooth' : 'auto' });
+  };
+  $$('[data-nav]').forEach((a) => a.addEventListener('click', (ev) => {
+    if (ev.metaKey || ev.ctrlKey || ev.shiftKey) return;
+    ev.preventDefault();
+    const id = a.dataset.nav;
+    history.pushState({ id }, '', id === 'home' ? '/' : `/${id}/`);
+    goTo(id, !reduced);
+  }));
+  addEventListener('popstate', () => goTo((location.pathname.match(/^\/([a-z]+)\/?$/) || [])[1] || 'home', !reduced));
 
   /* ---------- mode toggle ---------- */
   $$('[data-mode="paper"]').forEach((a) => a.addEventListener('click', () => { try { sessionStorage.setItem('mode', 'paper'); } catch (_) {} }));
@@ -127,7 +142,7 @@
       .to('#loader .r', { xPercent: 101, duration: 1.2, ease: 'expo.inOut', force3D: true }, '<')
       .call(() => { html.classList.remove('locked'); status.textContent = 'showreel'; }, null, '-=.5')
       .call(() => { gsap.killTweensOf(AG.map((a) => a.cur)); $('#loader').remove(); })
-      .to({}, { duration: reduced ? 0 : 3.6 }) // let the showreel breathe before anything is built over it
+      .to({}, { duration: reduced || section ? 0 : 3.6 }) // let the showreel breathe before anything is built over it (skipped on section links)
       .call(() => {
         html.classList.remove('hero-clean');
         if (swarmOk) {
@@ -135,6 +150,7 @@
           window.__swarmGated = false;
           status.textContent = 'swarm building';
           window.__swarmRebuild.app.engine.start();
+          if (section) setTimeout(() => goTo(section, true), 400);
         } else openingThenLive();
       });
   }
@@ -182,5 +198,6 @@
       }
     });
     ScrollTrigger.refresh();
+    if (section && !useSwarm) setTimeout(() => goTo(section, true), 200);
   }
 })();

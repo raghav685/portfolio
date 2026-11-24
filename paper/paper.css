@@ -7,7 +7,7 @@
   --mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
-html { background: var(--bg); scroll-behavior: smooth; scroll-padding-top: 72px }
+html { background: var(--bg); scroll-padding-top: 72px }
 body { position: relative; background: var(--bg); color: var(--fg); font: 400 16px/1.65 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: clip }
 body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 72px 72px; opacity: .35; -webkit-mask-image: linear-gradient(#000, transparent 70%); mask-image: linear-gradient(#000, transparent 70%) }
 a { color: inherit; text-decoration: none }
