@@ -15,7 +15,7 @@ window.SITE = {
     { name: "LinkedIn", url: "https://www.linkedin.com/in/manjunath-chandrashekar78/", handle: "manjunath-chandrashekar78" }
   ],
 
-  music: { name: "Spotify", label: "Lose Yourself, Eminem", title: "Lose Yourself", artist: "Eminem", album: "8 Mile soundtrack", length: "5:26", uri: "spotify:track:3u0W3gJQNV5gegMmntzby8", url: "https://open.spotify.com/track/3u0W3gJQNV5gegMmntzby8", art: "https://i.scdn.co/image/ab67616d0000b273d2a9744ce3913664175e9197" },
+  music: { name: "Spotify", label: "Lose Yourself, Eminem", title: "Lose Yourself", artist: "Eminem", album: "8 Mile soundtrack", length: "5:24", uri: "spotify:track:3u0W3gJQNV5gegMmntzby8", url: "https://open.spotify.com/track/3u0W3gJQNV5gegMmntzby8", art: "https://i.scdn.co/image/ab67616d0000b273d2a9744ce3913664175e9197" },
   about: [
     ["(me)", "I have always been drawn to people who spot an opening where everyone else sees a dead end. A big idea is worth little until someone has the nerve to act on it, and acting on it is the part I enjoy most."],
     ["(now)", "As Marketing Manager at Annaizu, a UK immigration and compliance platform, I run SEO, AI search visibility, paid search, content and automation. Around 20% of the business now comes from qualified leads that search brings in."]
@@ -27,7 +27,7 @@ window.SITE = {
   awards: [
     ["First place", "Several college debate competitions on politics, religion and humanity"],
     ["Recognition", "Honoured by local government in India as part of a COVID-19 frontline volunteer team"],
-    ["Cricket", "Represented my division at division level"]
+    ["Cricket", "Played competitive cricket at division level"]
   ],
 
   ticker: ["SEO", "AI search / GEO", "Google Ads", "AI automation", "LinkedIn Ads", "Content strategy", "Adobe CC", "Canva", "Web development", "Motion design", "Product requirements", "Zoho CRM", "HubSpot", "Script writing"],
@@ -75,7 +75,7 @@ window.SITE = {
   now: ["AI search", "Marketing automation", "Google Ads", "Remotion", "Strength training"],
 
   jobs: [
-    { r: "Marketing Manager", o: "Annaizu", when: "2026 – Present", d: "Lead SEO, AI search, paid media, content and automation. Promoted from Marketing Executive (2025 – 2026).", tag: "London" },
+    { r: "Marketing Manager", o: "Annaizu", when: "2026 – Present", d: "Lead SEO, AI search, paid media, content and automation. Promoted from Marketing Executive (2025 – 2026).", tag: "UK" },
     { r: "Sales Associate", o: "Greene King", when: "2024 – 2025", d: "Customer facing sales and service in a busy hospitality setting.", tag: "London" },
     { r: "Marketing Associate, Digital & Growth", o: "Bharathi Associates", when: "2022 – 2023", d: "Digital campaigns and growth marketing for an industrial equipment supplier.", tag: "India" },
     { r: "Marketing Associate", o: "IFI Tech Solutions", when: "2020 – 2022", d: "Joined as a sales and marketing intern in 2020 and moved up to Marketing Associate in 2021.", tag: "India" }
