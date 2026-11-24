@@ -41,7 +41,7 @@ window.SITE = {
     { t: "Motion & video", d: "Reels, brand films and product videos, mixing AI generated footage with code driven edits.", tags: ["Remotion", "HyperFrames", "Premiere", "AI video"] },
     { t: "Web development", d: "Fast marketing sites and data driven web apps, from first design to launch, with the databases and hosting behind them.", tags: ["HTML/CSS/JS", "GSAP", "Webflow", "Firebase", "Aiven", "Vercel", "IONOS"] },
     { t: "Product & research", d: "Competitor analysis, product requirement documents and roadmaps that turn market gaps into features.", tags: ["PRDs", "Roadmaps", "Market research"] },
-    { t: "CRM & lead generation", d: "Lead sourcing, enrichment, list imports and nurturing that keep the sales pipeline moving.", tags: ["Zoho CRM", "HubSpot", "Lusha"] }
+    { t: "CRM & lead generation", d: "Email marketing, lead sourcing, enrichment and nurturing that keep the sales pipeline moving.", tags: ["Email marketing", "Zoho CRM", "HubSpot", "Lusha"] }
   ],
 
   works: [
@@ -75,16 +75,16 @@ window.SITE = {
   now: ["AI search", "Marketing automation", "Google Ads", "Remotion", "Strength training"],
 
   jobs: [
-    { r: "Marketing Manager", o: "Annaizu", when: "2026 – Present", d: "Lead SEO, AI search, paid media, content and automation. Promoted from Marketing Executive (2025 – 2026).", tag: "UK" },
-    { r: "Sales Associate", o: "Greene King", when: "2024 – 2025", d: "Customer facing sales and service in a busy hospitality setting.", tag: "London" },
+    { r: "Marketing Manager", o: "Annaizu", when: "2026 – Present", d: "Lead SEO, AI search, paid media, email marketing and automation, running the lead pipeline end to end. Promoted from Marketing Executive (2025 – 2026).", tag: "UK" },
+    { r: "Sales Associate", o: "Greene King", when: "2024 – 2025", d: "Brand and promotional strategy, reels and content, offline marketing with banners and posters, offer pricing, events and guest communication.", tag: "London" },
     { r: "Marketing Associate, Digital & Growth", o: "Bharathi Associates", when: "2022 – 2023", d: "Digital campaigns and growth marketing for an industrial equipment supplier.", tag: "India" },
-    { r: "Marketing Associate", o: "IFI Tech Solutions", when: "2020 – 2022", d: "Joined as a sales and marketing intern in 2020 and moved up to Marketing Associate in 2021.", tag: "India" }
+    { r: "Marketing Associate", o: "IFI Tech Solutions", when: "2020 – 2022", d: "Joined as an intern learning Lusha, CRM and sales strategy. Promoted in 2021 after building the lead pipeline, then took over content and advertising within the team.", tag: "India" }
   ],
   freelance: [
     { r: "Web developer", o: "Bharathi Associates website" },
     { r: "Reels & motion", o: "VeggiGo" }
   ],
-  soft: ["Leadership", "Public speaking & debate", "Stakeholder communication", "Research", "Fast iteration"],
+  soft: ["Teamwork", "Leadership", "Public speaking & debate", "Stakeholder communication", "Research", "Fast iteration"],
   certs: ["Digital Marketing", "Google", "HubSpot", "LinkedIn", "Adobe InDesign"],
 
   life: {
