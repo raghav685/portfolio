@@ -62,6 +62,7 @@
       <h2>Experience</h2>${S.jobs.map((j) => `<div class="item"><div class="mono">${e(j.when)} · ${e(j.tag)}</div><h3>${e(j.r)}, ${e(j.o)}</h3><p>${e(j.d)}</p></div>`).join('')}
       <div class="item"><div class="mono">Freelance</div>${S.freelance.map((f) => `<h3>${e(f.r)}, ${e(f.o)}</h3>`).join('')}</div>
       <h2>Education</h2>${S.education.map((x) => `<div class="item"><div class="mono">${e(x.tag)}</div><h3>${e(x.school)}</h3><p>${e(x.course)}</p></div>`).join('')}
+      <h2>Languages</h2>${S.languages.map(([l, v]) => `<div class="row"><span>${e(l)}</span><span class="mono">${e(v)}</span></div>`).join('')}
       <h2>Skills</h2>${S.skills.map((s) => `<div class="item"><h3>${e(s.t)}</h3><p>${e(s.d)}</p>${tags(s.tags)}</div>`).join('')}
       <h2>Work</h2>${S.works.filter((w) => !w.pending).map((w) => `<div class="item"><div class="mono">${e(w.k)}</div><h3>${w.url ? `<a href="${e(w.url)}">${e(w.t)} ↗</a>` : e(w.t)}</h3><p>${e(w.d)}</p>${tags(w.tags)}</div>`).join('')}
       <h2>Reels</h2>${S.reels.map((r) => `<div class="item"><div class="mono">${e(r.k)}</div><h3><a href="${P(r.src)}">${e(r.t)} ↗</a></h3><p>${e(r.d)}</p></div>`).join('')}

@@ -20,6 +20,7 @@ window.SITE = {
     ["(me)", "I have always been drawn to people who spot an opening where everyone else sees a dead end. A big idea is worth little until someone has the nerve to act on it, and acting on it is the part I enjoy most."],
     ["(now)", "As Marketing Manager at Annaizu, a UK immigration and compliance platform, I run SEO, AI search visibility, paid search, content and automation. Around 20% of the business now comes from qualified leads that search brings in."]
   ],
+  languages: [["English", "Full professional proficiency"]],
   education: [
     { tag: "(masters) 2023 – 2024", school: "Queen Mary University of London", course: "Master's in Management, Marketing specialisation. Final result: Merit (2:1)" }
   ],
@@ -45,7 +46,7 @@ window.SITE = {
 
   works: [
     { k: "Annaizu", t: "Cited by Google's AI Overview", d: "For \"best sponsor licence compliance software UK\", Google's AI Overview lists Annaizu as its first source, and the site also ranks in the organic results underneath.", tags: ["AI search", "GEO / AEO"], img: "assets/img/work-annaizu-ai.jpg", url: "" },
-    { k: "Annaizu", t: "SEO audit: immigration & compliance", d: "PENDING_AUDIT", tags: ["OpenSEO", "Technical SEO", "Content"], img: "", url: "", pending: true },
+    { k: "Annaizu", t: "2.6x more referring domains", d: "Grew referring domains from 34 to 89 in a year, with 234 new backlinks in a single month, and earned a link from the Home Office's own DBS directory (domain authority 69). Measured with an OpenSEO audit.", tags: ["OpenSEO", "Link building", "Digital PR"], img: "assets/img/work-annaizu-links.jpg", url: "" },
     { k: "Freelance", t: "Bharathi Associates", d: "Website for an industrial equipment supplier of pumps, blowers and diffusers for wastewater treatment projects.", tags: ["Web development", "Anime.js"], img: "assets/img/work-bharathi.jpg", url: "https://bharathi-associates.com/" },
     { k: "Personal", t: "Baba Yaga Fitness", d: "A training web app with an exercise library of 873 movements, workout logging, programmes and progress tracking.", tags: ["Web app", "Fitness"], img: "assets/img/work-fitness.jpg", url: "https://palegreen-oyster-544450.hostingersite.com/" }
   ],

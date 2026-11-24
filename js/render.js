@@ -52,6 +52,8 @@
         <div>
           <h3 class="h3m mono">/ Education</h3>
           ${S.education.map((e) => `<div class="uni"><div class="crest mono">QM</div><div><span class="mono">${esc(e.tag)}</span><div class="t">${esc(e.school)}</div><div class="s">${esc(e.course)}</div></div></div>`).join('')}
+          <h3 class="h3m mono" style="margin-top:40px">/ Languages</h3>
+          ${S.languages.map(([l, v], i) => `<div class="row"><span>${esc(l)}</span><span class="mono"><b>${pad(i + 1)}</b>${esc(v)}</span></div>`).join('')}
         </div>
         <div>
           <h3 class="h3m mono">/ Awards &amp; recognition</h3>
