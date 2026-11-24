@@ -23,7 +23,8 @@ window.SITE = {
   ],
   languages: [["English", "Full professional proficiency"]],
   education: [
-    { tag: "(masters) 2023 – 2024", school: "Queen Mary University of London", course: "Master's in Management, Marketing specialisation. Final result: Merit (2:1)" }
+    { tag: "(masters) Sep 2023 – Sep 2024", school: "Queen Mary University of London", course: "Master's in Management, Marketing specialisation. Final result: Merit (2:1)" },
+    { tag: "(bachelors) Jul 2019 – Mar 2022", school: "JAIN College", course: "Bachelor of Business Administration (BBA), Marketing" }
   ],
   awards: [
     ["First place", "Several college debate competitions on politics, religion and humanity"],
@@ -77,10 +78,11 @@ window.SITE = {
   now: ["AI search", "Marketing automation", "Google Ads", "Remotion", "Strength training"],
 
   jobs: [
-    { r: "Marketing Manager", o: "Annaizu", when: "2026 – Present", d: "Lead SEO, AI search, paid media, email marketing and automation, running the lead pipeline end to end. Promoted from Marketing Executive (2025 – 2026).", tag: "UK" },
-    { r: "Sales Associate", o: "Greene King", when: "2024 – 2025", d: "Brand and promotional strategy, reels and content, offline marketing with banners and posters, offer pricing, events and guest communication.", tag: "London" },
-    { r: "Marketing Associate, Digital & Growth", o: "Bharathi Associates", when: "2022 – 2023", d: "Digital campaigns and growth marketing for an industrial equipment supplier.", tag: "India" },
-    { r: "Marketing Associate", o: "IFI Tech Solutions", when: "2020 – 2022", d: "Joined as an intern learning Lusha, CRM and sales strategy. Promoted in 2021 after building the lead pipeline, then took over content and advertising within the team.", tag: "India" }
+    { r: "Marketing Manager", o: "Annaizu", when: "Jan 2026 – Present", d: "Lead SEO, AI search, paid media, email marketing and automation, running the lead pipeline end to end. Promoted from Marketing Executive (Jun 2025 – Dec 2025).", tag: "London" },
+    { r: "Sales Associate", o: "Greene King", when: "Oct 2024 – Mar 2025", d: "Brand and promotional strategy, reels and content, offline marketing with banners and posters, offer pricing, events and guest communication.", tag: "London" },
+    { r: "Marketing Executive", o: "Bharathi Associates", when: "Oct 2022 – Sep 2023", d: "Digital campaigns and growth marketing for an industrial equipment supplier, plus the company website.", tag: "India" },
+    { r: "Marketing Associate", o: "Urban Company", when: "Mar 2022 – Aug 2022", d: "SEO copywriting, Google Ads and PPC support, and marketing creatives for a home services platform.", tag: "India" },
+    { r: "Marketing Associate", o: "IFI Techsolutions", when: "Nov 2020 – Feb 2022", d: "Joined as a sales and marketing intern learning Lusha, CRM and sales strategy. Promoted in November 2021 after building the lead pipeline, then took over content and advertising within the team.", tag: "India" }
   ],
   freelance: [
     { r: "Web developer", o: "Bharathi Associates website" },
