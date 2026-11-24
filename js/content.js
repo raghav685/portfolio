@@ -33,10 +33,10 @@ window.SITE = {
   ticker: ["SEO", "AI search / GEO", "Google Ads", "AI automation", "LinkedIn Ads", "Content strategy", "Adobe CC", "Canva", "Web development", "Motion design", "Product requirements", "Zoho CRM", "HubSpot", "Script writing"],
 
   skills: [
-    { t: "SEO & AI search", d: "Technical audits, keyword gap analysis, on page optimisation and getting cited in AI answers (GEO and AEO).", tags: ["OpenSEO", "Search Console", "Schema", "Webflow"] },
+    { t: "SEO & AI search", d: "Technical audits, keyword gap analysis, on page optimisation and getting cited in AI answers (GEO and AEO).", tags: ["Semrush", "OpenSEO", "Search Console", "Schema"] },
     { t: "Paid media", d: "Google Ads and LinkedIn Ads campaigns, from keyword and intent mapping to ad copy, budgets and conversion tracking.", tags: ["Google Ads", "LinkedIn Ads", "Tracking"] },
     { t: "AI automation", d: "AI agents and workflows that take repetitive work off the team: research, reporting, lead handling and content operations.", tags: ["AI agents", "Workflows", "Prompting", "MCP"] },
-    { t: "Content & social", d: "Content plans, copywriting, newsletters and LinkedIn pages that build an audience and bring in enquiries.", tags: ["Copywriting", "LinkedIn", "Email", "Newsletters"] },
+    { t: "Copywriting", d: "Long form articles, newsletters, landing pages, ad copy and LinkedIn posts, written to rank, get cited by AI and convert.", tags: ["Blogs", "Newsletters", "Landing pages", "LinkedIn"] },
     { t: "Design", d: "Brand consistent social posts, ads, print and presentation material.", tags: ["Adobe Photoshop", "Adobe InDesign", "Canva"] },
     { t: "Motion & video", d: "Reels, brand films and product videos, mixing AI generated footage with code driven edits.", tags: ["Remotion", "HyperFrames", "Premiere", "AI video"] },
     { t: "Web development", d: "Fast, animated marketing sites from first design to launch, plus CMS builds and migrations.", tags: ["HTML/CSS/JS", "GSAP", "Webflow", "Hostinger"] },
@@ -45,10 +45,12 @@ window.SITE = {
   ],
 
   works: [
-    { k: "Annaizu", t: "Cited by Google's AI Overview", d: "For \"best sponsor licence compliance software UK\", Google's AI Overview lists Annaizu as its first source, and the site also ranks in the organic results underneath.", tags: ["AI search", "GEO / AEO"], img: "assets/img/work-annaizu-ai.jpg", url: "" },
+    { k: "Annaizu", t: "Cited by Google's AI Overview", d: "For \"best sponsor licence compliance software UK\", Google's AI Overview lists Annaizu as its first source, and the site also ranks in the organic results underneath.", tags: ["AI search", "GEO / AEO"], img: "assets/img/work-annaizu-ai.jpg", url: "", wide: true },
     { k: "Annaizu", t: "2.6x more referring domains", d: "Grew referring domains from 34 to 89 in a year, with 234 new backlinks in a single month, and earned a link from the Home Office's own DBS directory (domain authority 69). Measured with an OpenSEO audit.", tags: ["OpenSEO", "Link building", "Digital PR"], img: "assets/img/work-annaizu-links.jpg", url: "" },
-    { k: "Freelance", t: "Bharathi Associates", d: "Website for an industrial equipment supplier of pumps, blowers and diffusers for wastewater treatment projects.", tags: ["Web development", "Anime.js"], img: "assets/img/work-bharathi.jpg", url: "https://bharathi-associates.com/" },
-    { k: "Personal", t: "Baba Yaga Fitness", d: "A training web app with an exercise library of 873 movements, workout logging, programmes and progress tracking.", tags: ["Web app", "Fitness"], img: "assets/img/work-fitness.jpg", url: "https://palegreen-oyster-544450.hostingersite.com/" }
+    { k: "Annaizu, copywriting", t: "500+ articles written", d: "The blog and newsletter behind Annaizu's search growth: more than 500 articles on sponsorship, immigration, DBS checks and workforce compliance, written for UK employers.", tags: ["Copywriting", "Blog", "Newsletter"], img: "assets/img/work-annaizu-blog.jpg", url: "https://www.annaizu.com/blog", cta: "Read the blog" },
+    { k: "Annaizu, built by me", t: "Annaizu website", d: "The marketing site for a UK workforce management and compliance platform, covering sponsorship compliance, immigration services, rota, onboarding and DBS checks.", tags: ["Web development", "Webflow", "SEO"], img: "assets/img/work-annaizu-site.jpg", url: "https://www.annaizu.com/", wide: true },
+    { k: "Freelance, built by me", t: "Bharathi Associates", d: "Website for an industrial equipment supplier of pumps, blowers and diffusers for wastewater treatment projects.", tags: ["Web development", "Anime.js"], img: "assets/img/work-bharathi.jpg", url: "https://bharathi-associates.com/" },
+    { k: "Personal, built by me", t: "Baba Yaga Fitness", d: "A training web app with an exercise library of 873 movements, workout logging, programmes and progress tracking.", tags: ["Web app", "Fitness"], img: "assets/img/work-fitness.jpg", url: "https://palegreen-oyster-544450.hostingersite.com/" }
   ],
 
   reels: [

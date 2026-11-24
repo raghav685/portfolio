@@ -21,8 +21,7 @@
         <span class="rec mono"><i></i>Showreel — EVERYTHING*</span>
       </figure>
       <div class="hero-shade"></div>
-      <p class="hero-tag mono">${esc(S.tagline)}</p>
-      <p class="hero-pref mono">Call me <b>${esc(S.preferred)}</b></p>
+      <div class="hero-kicker"><p class="hero-pref mono">Call me <b>${esc(S.preferred)}</b></p><p class="hero-tag mono">${esc(S.tagline)}</p></div>
       <h1 class="hero-name" aria-label="${esc(fullName)}, known as ${esc(S.preferred)}"><span class="ln">${esc(S.first)}</span><span class="ln">${esc(S.last)}</span></h1>
       <div class="hero-bottom">
         <p class="desc">${esc(S.intro)}</p>
@@ -82,9 +81,9 @@
       ${head('Selected works', 'Work')}
       <div class="pj-grid">
         ${works.map((w, i) => `
-        <article class="pj${i === 0 ? ' wide' : ''}">
+        <article class="pj${w.wide ? ' wide' : ''}">
           <a class="pj-media"${ext(w.url)}><img src="${esc(w.img)}" alt="${esc(w.t)}"></a>
-          <div class="pj-meta mono"><span>${pad(i + 1)} — ${esc(w.k)}</span>${w.url ? `<a${ext(w.url)}>Visit ↗</a>` : '<span>Case study</span>'}</div>
+          <div class="pj-meta mono"><span>${pad(i + 1)} — ${esc(w.k)}</span>${w.url ? `<a${ext(w.url)}>${esc(w.cta || 'Visit site')} ↗</a>` : '<span>Case study</span>'}</div>
           <h3>${esc(w.t)}</h3>
           <p>${esc(w.d)}</p>
           ${chips(w.tags)}
