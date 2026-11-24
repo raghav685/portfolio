@@ -4,7 +4,7 @@ window.SITE = {
   last: "Chandrashekar",
   preferred: "Raghav",
   handle: "RAGHAV/BUILD",
-  url: "https://raghav685.github.io/portfolio/",
+  url: "https://manjunathchandrashekar.com/",
   tagline: "[ Marketing Manager / AI Automation Specialist / Web Developer ]",
   intro: "London based marketing manager. I help businesses get found through search, AI answers, paid media and automation, then build the websites and films that turn that attention into leads.",
   origin: "London, UK",
