@@ -221,6 +221,15 @@ html.hero-clean .hero-shade, html.hero-clean #heroVideo .rec, html.hero-clean #h
 .life-ph { display: grid; grid-template-columns: 1fr 1fr; gap: 16px }
 .life-ph img { aspect-ratio: 3 / 4 }
 
+/* personal project inside My life */
+.fit { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 20px; align-items: center; padding: 16px; border: 1px solid var(--line); transition: border-color .25s, background .25s }
+.fit:hover { border-color: var(--acc); background: rgba(255, 94, 0, .04) }
+.fit img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top }
+.fit-c { display: grid; gap: 8px }
+.fit-c .mono { color: var(--dim) } .fit-c .acc { color: var(--acc) }
+.fit-c strong { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(24px, 2.2vw, 32px); line-height: 1 }
+.fit-c > span:nth-child(3) { color: var(--mute); font-size: 14px }
+
 /* experience extras */
 .job .when { color: var(--acc); margin-bottom: 10px }
 .job .jd { color: var(--mute); font-size: 15px; margin-top: 8px; max-width: 520px }
@@ -245,7 +254,7 @@ html.hero-clean .hero-shade, html.hero-clean #heroVideo .rec, html.hero-clean #h
   .hero-video .rec { display: none }
   .hero-video .snd { top: 92px }
   .hero { padding-top: 140px }
-  .sk-grid, .pj-grid { grid-template-columns: 1fr }
+  .sk-grid, .pj-grid, .fit { grid-template-columns: 1fr }
   .sk { min-height: 0 }
   .hud { padding-left: 14px }
   .hud .logo { font-size: 10px; letter-spacing: .12em }

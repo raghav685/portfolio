@@ -8,7 +8,8 @@
   const head = (label, title) => `<div class="s-head"><span class="mono"><b>Scene ${pad(++scene)}</b> — ${esc(label)}</span><h2 class="s-title">${esc(title)} <span class="sl">/</span></h2></div>`;
   const ext = (u) => (u ? ` href="${esc(u)}" target="_blank" rel="noopener"` : '');
   const fullName = `${S.first} ${S.last}`;
-  const works = S.works.filter((w) => !w.pending);
+  const works = S.works.filter((w) => !w.pending && w.place !== 'life');
+  const fit = S.works.find((w) => w.place === 'life');
 
   document.getElementById('logo').textContent = S.handle;
 
@@ -180,6 +181,7 @@
             <p>${esc(L.text)}</p>
           </div>
           <div class="life-ph">${L.photos.map((p) => `<figure class="media"><img src="${esc(p)}" alt="Training at the gym"></figure>`).join('')}</div>
+          ${fit ? `<a class="fit"${ext(fit.url)}><img src="${esc(fit.img)}" alt="${esc(fit.t)} screenshot"><span class="fit-c"><span class="mono">${esc(fit.k)}</span><strong>${esc(fit.t)}</strong><span>${esc(fit.d)}</span><span class="mono acc">Visit site ↗</span></span></a>` : ''}
         </div>
       </div>
     </div>

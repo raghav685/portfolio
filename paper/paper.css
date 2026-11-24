@@ -39,7 +39,12 @@ button { font: inherit }
 .rv.in { opacity: 1; transform: none }
 
 /* shared */
-.sec { position: relative; padding: clamp(80px, 10vw, 128px) 0 }
+/* section rhythm: one step between chapters, a tighter step inside the Life chapter */
+:root { --sec-y: clamp(64px, 8vw, 104px); --sec-y-tight: clamp(40px, 5vw, 64px) }
+.sec { position: relative; padding: var(--sec-y) 0 }
+.sec.chap { padding-top: var(--sec-y-tight) }
+#life { padding-bottom: var(--sec-y-tight) }
+#writing { padding-bottom: var(--sec-y-tight) }
 .sh { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: clamp(40px, 5vw, 64px) }
 .sh.center { justify-content: center; text-align: center }
 .sh h2 { font: 900 clamp(36px, 5vw, 64px)/1 var(--display); text-transform: uppercase; letter-spacing: -.02em }
@@ -62,11 +67,12 @@ button { font: inherit }
 .row.tall span:first-child { font-size: 14px; line-height: 1.45 }
 
 /* hero */
-.hero { position: relative; min-height: 100svh; display: flex; align-items: center; padding: 110px 0 72px }
+.hero { position: relative; min-height: 100svh; display: flex; align-items: center; padding: 110px 0 var(--sec-y) }
 .hero-grid { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(32px, 5vw, 80px); align-items: center }
-.hero-copy { display: grid; gap: 22px; justify-items: start; min-width: 0 }
+.hero-copy { display: grid; gap: 22px; justify-items: start; min-width: 0; container-type: inline-size }
 .hero-grid > * { min-width: 0 }
-.hero h1 { font: 900 clamp(30px, 5.6vw, 86px)/.92 var(--display); text-transform: uppercase; letter-spacing: -.03em }
+/* CHANDRASHEKAR is ~9.55em wide: size the name to its own column so it never runs under the photo */
+.hero h1 { font: 900 86px/.92 var(--display); font-size: min(86px, calc(100cqi / 9.9)); text-transform: uppercase; letter-spacing: -.03em }
 .pref { color: var(--mute) } .pref b { color: var(--acc); font-weight: 700 }
 .lead { max-width: 520px; color: var(--mute); font-size: 17px }
 .cta { display: flex; align-items: center; gap: 18px; margin-top: 6px }
@@ -131,6 +137,7 @@ button { font: inherit }
 .tile.w2 { grid-column: span 2 } .tile.h2 { grid-row: span 2 }
 .tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2, .7, .2, 1) }
 .tile.paperpg img { object-position: top; background: #fff }
+.tile.doc img { object-position: center; background: #fff }
 .tile:hover img { transform: scale(1.04) }
 .tile .cap { position: absolute; left: 0; right: 0; bottom: 0; display: grid; gap: 4px; padding: 40px 18px 16px; color: #fff; background: linear-gradient(transparent, rgba(0, 0, 0, .7)) }
 .tile .cap strong { font: 800 18px/1.1 var(--display) }
@@ -147,8 +154,6 @@ button { font: inherit }
 .book h3 { font: 900 clamp(26px, 3vw, 40px)/1.05 var(--display); letter-spacing: -.02em }
 .book p { color: var(--mute); max-width: 540px }
 
-/* player band */
-.np-band { position: relative; z-index: 1; padding: 0 0 clamp(64px, 8vw, 104px) }
 
 /* contact */
 .ct { display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 14px; padding: 18px 0; border-top: 1px solid var(--line) }
@@ -159,6 +164,7 @@ button { font: inherit }
 .ct-o { color: var(--dim); transition: color .2s, transform .2s }
 .ct:hover .ct-o { color: var(--acc); transform: translate(2px, -2px) }
 .foot { position: relative; z-index: 1; border-top: 1px solid var(--line); padding: 28px 0 40px }
+#contact { padding-bottom: var(--sec-y) }
 .foot .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--dim) }
 
 @media (max-width: 960px) {
@@ -170,7 +176,6 @@ button { font: inherit }
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)) }
 }
 @media (max-width: 640px) {
-  .hero h1 { font-size: calc((100vw - 2 * var(--gut)) / 9.2) }
   .cta { gap: 10px; flex-wrap: wrap }
   .pj, .cols3 { grid-template-columns: 1fr }
   .kn-row { grid-template-columns: 44px 1fr }

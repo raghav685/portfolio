@@ -51,7 +51,7 @@ window.SITE = {
     { k: "Annaizu, built by me", t: "Annaizu website", d: "The marketing site for a UK workforce management and compliance platform, covering sponsorship compliance, immigration services, rota, onboarding and DBS checks.", tags: ["Web development", "Webflow", "SEO"], img: "assets/img/work-annaizu-site.jpg", url: "https://www.annaizu.com/" },
     { k: "Annaizu, built by me", t: "UK sponsor licence checker", d: "A searchable mirror of the GOV.UK register of 127,310 licensed sponsors, built end to end by me. A scheduled job pulls the government data every day and refreshes the site automatically.", tags: ["Data pipeline", "Daily sync", "Web app"], img: "assets/img/work-sponsorlist.jpg", url: "https://uk-tier2sponsorlist.annaizu.com/" },
     { k: "Freelance, built by me", t: "Bharathi Associates", d: "Website for an industrial equipment supplier of pumps, blowers and diffusers for wastewater treatment projects.", tags: ["Web development", "Anime.js"], img: "assets/img/work-bharathi.jpg", url: "https://bharathi-associates.com/" },
-    { k: "Personal, built by me", t: "Baba Yaga Fitness", d: "A training web app with an exercise library of 873 movements, workout logging, programmes and progress tracking.", tags: ["Web app", "Fitness"], img: "assets/img/work-fitness.jpg", url: "https://palegreen-oyster-544450.hostingersite.com/" }
+    { k: "Personal, built by me", t: "Baba Yaga Fitness", d: "A training web app with an exercise library of 873 movements, workout logging, programmes and progress tracking.", tags: ["Web app", "Fitness"], img: "assets/img/work-fitness.jpg", url: "https://palegreen-oyster-544450.hostingersite.com/", place: "life" }
   ],
 
   reels: [
@@ -89,7 +89,7 @@ window.SITE = {
 
   life: {
     title: "Lift heavy /",
-    text: "Training keeps me disciplined, and the gym is where I clear my head. It is also why I built Baba Yaga Fitness, the training app in my work above.",
+    text: "Training keeps me disciplined, and the gym is where I clear my head. It is also why I built Baba Yaga Fitness, my own training app.",
     clip: "assets/video/gym-deadlift.mp4", poster: "assets/img/gym-deadlift-poster.jpg",
     photos: ["assets/img/gym-kettlebell.jpg", "assets/img/gym-legpress.jpg"]
   },

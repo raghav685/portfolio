@@ -10,7 +10,6 @@
   const I = {
     out: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>',
     in: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM8 10v6M8 7v.01M12 16v-6M12 12.5c0-1.5 1-2.5 2.2-2.5S16 11 16 12.5V16"/></svg>',
-    gh: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>',
     mail: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3zM3 7l9 6 9-6"/></svg>',
     doc: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h6"/></svg>',
     music: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13M9 18a3 3 0 1 1-3-3 3 3 0 0 1 3 3zM20 16a3 3 0 1 1-3-3 3 3 0 0 1 3 3z"/></svg>'
@@ -64,7 +63,8 @@
     </div>
   </section>`;
 
-  const works = S.works.filter((w) => !w.pending);
+  const works = S.works.filter((w) => !w.pending && w.place !== 'life');
+  const fit = S.works.find((w) => w.place === 'life');
   const work = `
   <section id="work" class="sec">
     <div class="wrap">
@@ -118,7 +118,8 @@
     { img: 'assets/img/reel-annaizu-poster.jpg', t: 'Keep the Licence', s: 'Reel / Annaizu', cls: 'h2', href: S.reels[0].src },
     { img: L.photos[1], t: 'Leg day', s: 'Strength / Routine' },
     { img: 'assets/img/reel-veggigo-poster.jpg', t: "86'd", s: 'Reel / VeggiGo', href: S.reels[1].src },
-    { img: W.pages[0], t: 'MAANAV', s: 'Script writing / Film', href: W.pdf, cls: 'w2 paperpg' }
+    { img: W.pages[0], t: 'MAANAV', s: 'Script writing / Film', href: W.pdf, cls: 'w2 doc' },
+    ...(fit ? [{ img: fit.img, t: fit.t, s: 'Personal project / Built by me', href: fit.url, cls: 'w2 paperpg' }] : [])
   ];
   const life = `
   <section id="life" class="sec">
@@ -134,7 +135,7 @@
   </section>`;
 
   const writing = `
-  <section id="writing" class="sec">
+  <section id="writing" class="sec chap">
     <div class="wrap">
       ${head('Deep dive', 'Script writing')}
       <article class="book rv">
@@ -153,7 +154,7 @@
     </div>
   </section>`;
 
-  const player = `<section class="np-band"><div class="wrap"><div class="np" data-player></div></div></section>`;
+  const player = `<section id="music" class="sec chap"><div class="wrap"><header class="sh rv"><div><h2>On repeat <span class="sl">/</span></h2><p class="mono sub">What the work is made to</p></div></header><div class="np rv" data-player></div></div></section>`;
 
   const rows = [
     { i: I.in, t: 'LinkedIn', s: S.socials[0].handle, u: S.socials[0].url },
