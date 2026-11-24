@@ -6,7 +6,7 @@
   const status = $('#status');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const params = new URLSearchParams(location.search);
-  const useSwarm = !reduced && innerWidth >= 760 && !params.has('noswarm');
+  const useSwarm = !reduced && !params.has('noswarm');
   // clean slugs: /about/, /work/ ... open the one-page site on that section
   const section = (location.pathname.match(/^\/([a-z]+)\/?$/) || [])[1] || window.__section || '';
   const goTo = (id, smooth) => {
@@ -89,7 +89,7 @@
     // The swarm scans the DOM while the loader covers the screen.
     swarmReady = track(new Promise((resolve) => {
       const s = document.createElement('script');
-      s.src = 'js/swarm-rebuild.js';
+      s.src = 'js/swarm-rebuild.js?v=30';
       s.onerror = () => resolve(false);
       s.onload = () => {
         const t0 = performance.now();

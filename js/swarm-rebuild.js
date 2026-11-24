@@ -1532,6 +1532,7 @@
 .hud.on{opacity:1;transform:translate(-50%,0)}
 .hud .dots{display:flex;padding-left:5px}
 .hud .dots i{display:block;width:18px;height:18px;margin-left:-5px;border-radius:50%;border:2px solid #1e1e1e;font:700 9px/14px Inter,system-ui,sans-serif;font-style:normal;text-align:center;color:#fff;transition:background .3s}
+.hud .hint{display:inline-flex;align-items:center;gap:7px}
 .hud .txt,.hud .status{display:flex;align-items:center;gap:7px;color:#cfcfcf;font-variant-numeric:tabular-nums}
 .hud .txt b{color:#fff;font-weight:600}
 .hud .sep{width:1px;height:12px;background:#444}
@@ -1552,6 +1553,7 @@
 .hud-unhide{all:unset;position:absolute;left:50%;bottom:16px;transform:translate(-50%,14px);opacity:0;pointer-events:none;padding:6px 12px;background:rgba(30,30,30,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#cfcfcf;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.25),inset 0 0 0 1px rgba(255,255,255,.07);font:500 11px/1 Inter,system-ui,-apple-system,sans-serif;cursor:pointer;transition:opacity .3s ease,transform .3s ease,background .15s,color .15s;z-index:6;user-select:none;box-sizing:border-box}
 .hud-unhide:hover{background:#3a3a3a;color:#fff}
 .hud-unhide.visible{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+@media (max-width:560px){.hud{bottom:calc(10px + env(safe-area-inset-bottom));gap:6px;padding:5px 5px 5px 8px;max-width:calc(100vw - 16px);font-size:11px}.hud .dots,.hud .bar,.hud [data-a="speed"],.hud .hint,.hud button.snd span{display:none}.hud button{padding:7px 8px;font-size:11px}.hud button.snd{padding:6px 7px}.hud .txt{gap:5px}}
 `;
 
   // -------------------------------------------------------------------- env
@@ -3755,7 +3757,7 @@
         const below = E.tasks.some((t) => t.state === "wait" && t.layer === "world" && t.gate > E.frontier);
         v.status.innerHTML =
           `<b>${workers}</b> agents<span class="sep"></span><b>${done.toLocaleString()}</b> / ${total.toLocaleString()} layers` +
-          (below && pend && !this.tour && E.backlog() === 0 ? `<span class="sep"></span>scroll to keep building` : "");
+          (below && pend && !this.tour && E.backlog() === 0 ? `<span class="hint"><span class="sep"></span>scroll to keep building</span>` : "");
       }
       v.barFill.style.width = total ? `${(done / total) * 100}%` : "0%";
       const busy = E.cursors.filter((c) => c.task).slice(-5);
