@@ -86,7 +86,7 @@
         <div class="deck-stage">
           ${works.map((w, i) => `
           <article class="dk-card" data-i="${i}" role="group" aria-roledescription="slide" aria-label="${i + 1} of ${works.length}: ${esc(w.t)}">
-            <a class="dk-media"${ext(w.url)} tabindex="-1"><img src="${esc(w.img)}" alt="${esc(w.t)}" loading="lazy" draggable="false"></a>
+            ${w.url ? `<a class="dk-media"${ext(w.url)} tabindex="-1"><img src="${esc(w.img)}" alt="${esc(w.t)}" loading="lazy" draggable="false"></a>` : `<div class="dk-media"><img src="${esc(w.img)}" alt="${esc(w.t)}" loading="lazy" draggable="false"></div>`}
             <div class="dk-body">
               <div class="dk-meta mono"><span>${pad(i + 1)} / ${pad(works.length)} · ${esc(w.k)}</span></div>
               <h3>${esc(w.t)}</h3>

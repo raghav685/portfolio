@@ -26,7 +26,20 @@
     rail.forEach((r, i) => r.classList.toggle('on', i === front));
     if (cur) cur.textContent = String(front + 1).padStart(2, '0');
   }
-  const go = (n) => { pos = Math.round(n); layout(); };
+  const stageEl = deck.querySelector('.deck-stage');
+  const go = (n) => {
+    pos = Math.round(n); layout();
+    if (reduce) { const c = cards[((pos % N) + N) % N]; stageEl.scrollTo({ left: c.offsetLeft - (stageEl.clientWidth - c.offsetWidth) / 2, behavior: 'smooth' }); }
+  };
+  if (reduce) {
+    // in the scroll-row fallback, the counter follows whichever card is centred
+    let raf = 0;
+    stageEl.addEventListener('scroll', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(() => {
+      const mid = stageEl.scrollLeft + stageEl.clientWidth / 2;
+      let best = 0, bd = Infinity; cards.forEach((c, i) => { const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid); if (d < bd) { bd = d; best = i; } });
+      if (best !== ((pos % N) + N) % N) { pos = best; layout(); }
+    }); }, { passive: true });
+  }
   const step = (d) => { go(pos + d); restart(); };
   function tick() { if (visible && !hover && !drag && !document.hidden) go(pos + 1); }
   function restart() { clearInterval(timer); if (!reduce) timer = setInterval(tick, 4800); }

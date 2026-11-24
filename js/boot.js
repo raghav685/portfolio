@@ -89,7 +89,7 @@
     // The swarm scans the DOM while the loader covers the screen.
     swarmReady = track(new Promise((resolve) => {
       const s = document.createElement('script');
-      s.src = 'js/swarm-rebuild.js?v=30';
+      s.src = 'js/swarm-rebuild.js?v=32';
       s.onerror = () => resolve(false);
       s.onload = () => {
         const t0 = performance.now();

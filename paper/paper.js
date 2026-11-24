@@ -72,7 +72,7 @@
       <div class="deck rv" data-deck tabindex="0" role="region" aria-roledescription="carousel" aria-label="Selected work">
         <div class="deck-stage">${works.map((w, i) => `
           <article class="dk-card" data-i="${i}" role="group" aria-roledescription="slide" aria-label="${i + 1} of ${works.length}: ${e(w.t)}">
-            <a class="dk-media"${ext(w.url)} tabindex="-1"><img src="${e(P(w.img))}" alt="${e(w.t)}" loading="lazy" draggable="false"></a>
+            ${w.url ? `<a class="dk-media"${ext(w.url)} tabindex="-1"><img src="${e(P(w.img))}" alt="${e(w.t)}" loading="lazy" draggable="false"></a>` : `<div class="dk-media"><img src="${e(P(w.img))}" alt="${e(w.t)}" loading="lazy" draggable="false"></div>`}
             <div class="dk-body">
               <div class="dk-meta mono"><span>PRJ_${String(i + 1).padStart(3, '0')} · ${e(w.k)}</span></div>
               <h3>${e(w.t)}</h3>
