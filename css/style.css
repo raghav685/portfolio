@@ -137,6 +137,8 @@ html.hero-clean .hero-shade, html.hero-clean #heroVideo .rec, html.hero-clean #h
 .pj-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px 18px }
 .pj { display: grid; gap: 14px; align-content: start }
 .pj .chips { margin-top: 4px }
+.pj.wide { grid-column: span 2 }
+.pj.wide .pj-media { aspect-ratio: 32.5 / 10 }
 .pj-media { display: block; overflow: hidden; border: 1px solid var(--line); background: #0d0d0d; aspect-ratio: 16 / 10 }
 .pj-media img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .8s cubic-bezier(.2, .7, .2, 1) }
 .pj-media:hover img { transform: scale(1.03) }
@@ -244,6 +246,10 @@ html.hero-clean .hero-shade, html.hero-clean #heroVideo .rec, html.hero-clean #h
 @media (max-width: 900px) {
   .about, .cols2, .exp, .life, .links, .book { grid-template-columns: 1fr }
   .pj-grid { grid-template-columns: 1fr 1fr }
+  .pj.wide { grid-column: auto }
+  .pj.wide .pj-media { aspect-ratio: 16 / 10 }
+  .pj-grid.odd > .pj:first-child { grid-column: span 2 }
+  .pj-grid.odd > .pj:first-child .pj-media { aspect-ratio: 32.5 / 10 }
   .reels { grid-template-columns: 1fr 1fr }
   .reels-note { grid-column: 1 / -1 }
   .sk-grid { grid-template-columns: 1fr 1fr }
@@ -257,6 +263,8 @@ html.hero-clean .hero-shade, html.hero-clean #heroVideo .rec, html.hero-clean #h
   .hero-video .snd { top: 92px }
   .hero { padding-top: 140px }
   .sk-grid, .pj-grid, .fit { grid-template-columns: 1fr }
+  .pj-grid.odd > .pj:first-child { grid-column: auto }
+  .pj-grid.odd > .pj:first-child .pj-media { aspect-ratio: 16 / 10 }
   .sk { min-height: 0 }
   .hud { padding-left: 14px }
   .hud .logo { font-size: 10px; letter-spacing: .12em }

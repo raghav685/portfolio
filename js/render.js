@@ -82,7 +82,7 @@
     <div class="ghost" aria-hidden="true">WORK</div>
     <div class="wrap">
       ${head('Selected works', 'Work')}
-      <div class="pj-grid">
+      <div class="pj-grid${works.length % 2 ? ' odd' : ''}">
         ${works.map((w, i) => `
         <article class="pj${w.wide ? ' wide' : ''}">
           <a class="pj-media"${ext(w.url)}><img src="${esc(w.img)}" alt="${esc(w.t)}"></a>

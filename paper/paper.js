@@ -69,7 +69,7 @@
   <section id="work" class="sec">
     <div class="wrap">
       ${head('Selected work', 'Search, content and websites — built and grown by me')}
-      <div class="pj">${works.map((w, i) => `
+      <div class="pj${works.length % 2 ? ' odd' : ''}">${works.map((w, i) => `
         <article class="pj-c rv">
           <a class="pj-img"${ext(w.url)}><img src="${e(P(w.img))}" alt="${e(w.t)}" loading="lazy"></a>
           <div class="pj-top mono"><span>PRJ_${String(i + 1).padStart(3, '0')} · ${e(w.k)}</span>${w.url ? `<a${ext(w.url)} aria-label="Open ${e(w.t)}">${I.out}</a>` : ''}</div>
