@@ -69,14 +69,26 @@
   <section id="work" class="sec">
     <div class="wrap">
       ${head('Selected work', 'Search, content and websites — built and grown by me')}
-      <div class="pj${works.length % 2 ? ' odd' : ''}">${works.map((w, i) => `
-        <article class="pj-c rv">
-          <a class="pj-img"${ext(w.url)}><img src="${e(P(w.img))}" alt="${e(w.t)}" loading="lazy"></a>
-          <div class="pj-top mono"><span>PRJ_${String(i + 1).padStart(3, '0')} · ${e(w.k)}</span>${w.url ? `<a${ext(w.url)} aria-label="Open ${e(w.t)}">${I.out}</a>` : ''}</div>
-          <h3>${e(w.t)}</h3>
-          <p>${e(w.d)}</p>
-          ${tags(w.tags, 'sm')}
-        </article>`).join('')}
+      <div class="deck rv" data-deck tabindex="0" role="region" aria-roledescription="carousel" aria-label="Selected work">
+        <div class="deck-stage">${works.map((w, i) => `
+          <article class="dk-card" data-i="${i}" role="group" aria-roledescription="slide" aria-label="${i + 1} of ${works.length}: ${e(w.t)}">
+            <a class="dk-media"${ext(w.url)} tabindex="-1"><img src="${e(P(w.img))}" alt="${e(w.t)}" loading="lazy" draggable="false"></a>
+            <div class="dk-body">
+              <div class="dk-meta mono"><span>PRJ_${String(i + 1).padStart(3, '0')} · ${e(w.k)}</span></div>
+              <h3>${e(w.t)}</h3>
+              <p>${e(w.d)}</p>
+              ${tags(w.tags, 'sm')}
+              ${w.url ? `<a class="dk-go mono"${ext(w.url)}>${e(w.cta || 'Visit site')} ${I.out}</a>` : '<span class="dk-go mono is-static">Case study</span>'}
+            </div>
+          </article>`).join('')}
+        </div>
+        <div class="deck-ui mono">
+          <button class="dk-btn" type="button" data-dir="-1" aria-label="Previous project"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <div class="dk-count" aria-live="polite"><b data-cur>01</b><span>/ ${pad(works.length)}</span></div>
+          <div class="dk-rail" aria-hidden="true">${works.map(() => '<i></i>').join('')}</div>
+          <button class="dk-btn" type="button" data-dir="1" aria-label="Next project"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
       </div>
     </div>
   </section>`;

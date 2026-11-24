@@ -1,12 +1,13 @@
 // Revolving project deck: coverflow ring with autoplay, drag, keys and buttons.
 (() => {
-  const deck = document.querySelector('[data-deck]');
-  if (!deck) return;
+  document.querySelectorAll('[data-deck]').forEach(init);
+  function init(deck) {
   const cards = [...deck.querySelectorAll('.dk-card')];
   const N = cards.length;
   const rail = [...deck.querySelectorAll('.dk-rail i')];
   const cur = deck.querySelector('[data-cur]');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fade = getComputedStyle(deck).getPropertyValue('--dk-fade').trim() === '1'; // light themes fade instead of darken
   let pos = 0, drag = null, timer = null, visible = false, hover = false;
   const wrap = (d) => ((d % N) + N + N / 2) % N - N / 2; // signed circular offset
   function layout(f = pos) {
@@ -14,8 +15,9 @@
     cards.forEach((c, i) => {
       const d = wrap(i - f), a = Math.abs(d);
       c.style.transform = `translate3d(${d * step}px, ${a * 18}px, ${-a * 170}px) rotateY(${-Math.sign(d) * Math.min(a, 2.2) * 24}deg)`;
-      c.style.opacity = a > 2.6 ? 0 : 1 - Math.max(0, a - 1.6) * 0.9;
-      c.style.filter = `brightness(${1 - Math.min(a, 2) * 0.32}) saturate(${1 - Math.min(a, 1) * 0.35})`;
+      const out = a > 2.6 ? 0 : 1 - Math.max(0, a - 1.6) * 0.9;
+      c.style.opacity = fade ? Math.min(out, 1 - Math.min(a, 2) * 0.22) : out;
+      c.style.filter = fade ? `saturate(${1 - Math.min(a, 1) * 0.5})` : `brightness(${1 - Math.min(a, 2) * 0.32}) saturate(${1 - Math.min(a, 1) * 0.35})`;
       c.style.zIndex = String(100 - Math.round(a * 10));
       c.style.visibility = a > 3.2 ? 'hidden' : 'visible';
     });
@@ -58,6 +60,20 @@
     new IntersectionObserver(([en]) => { visible = en.isIntersecting; }, { threshold: 0.35 }).observe(deck);
     addEventListener('resize', () => layout());
   }
+  // equal card heights from the tallest card's natural content (no clipped titles at any width)
+  function fit() {
+    deck.style.removeProperty('--ch');
+    const prev = cards.map((c) => c.style.height);
+    cards.forEach((c) => { c.style.height = 'auto'; });
+    const h = Math.max(...cards.map((c) => c.scrollHeight));
+    cards.forEach((c, i) => { c.style.height = prev[i]; });
+    deck.style.setProperty('--ch', h + 'px');
+  }
+  fit();
+  addEventListener('resize', fit);
+  if (document.fonts) document.fonts.ready.then(fit);
+  cards.forEach((c) => c.querySelector('img')?.addEventListener('load', fit, { once: true }));
   layout();
   restart();
+  }
 })();

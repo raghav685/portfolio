@@ -28,7 +28,10 @@
 
   /* ---------- hero video ---------- */
   const vid = $('#heroVid');
-  vid.src = innerWidth < 900 ? 'assets/video/hero-720.mp4' : 'assets/video/hero-1080.mp4';
+  // portrait screens get a portrait cut (full 16:9 frame over a blurred fill) so the film's words never get cropped
+  const portrait = innerHeight > innerWidth * 1.05;
+  if (portrait) vid.poster = 'assets/img/hero-poster-mobile.jpg';
+  vid.src = portrait ? 'assets/video/hero-mobile.mp4' : innerWidth < 900 ? 'assets/video/hero-720.mp4' : 'assets/video/hero-1080.mp4';
   vid.muted = true;
   vid.play().catch(() => {});
   const sndBtn = $('#heroSound');
