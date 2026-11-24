@@ -1685,6 +1685,7 @@
 
       const pb = env.pageBg;
       this.bg.style.backgroundColor = pb.color;
+      if (window.__swarmTransparentBg) this.bg.style.background = "transparent";
       const rgb = (pb.color.match(/[\d.]+/g) || [255, 255, 255]).map(Number);
       const lum = (0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2]) / 255;
       if (lum < 0.4) this.host.style.setProperty("--ph", "#3B3D42");

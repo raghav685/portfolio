@@ -16,7 +16,7 @@ window.SITE = {
     { name: "GitHub", url: "https://github.com/raghav685", handle: "@raghav685" }
   ],
 
-  music: { name: "Spotify", label: "Lose Yourself, Eminem", url: "https://open.spotify.com/track/3u0W3gJQNV5gegMmntzby8" },
+  music: { name: "Spotify", label: "Lose Yourself, Eminem", title: "Lose Yourself", artist: "Eminem", album: "8 Mile soundtrack", length: "5:26", uri: "spotify:track:3u0W3gJQNV5gegMmntzby8", url: "https://open.spotify.com/track/3u0W3gJQNV5gegMmntzby8", art: "https://i.scdn.co/image/ab67616d0000b273d2a9744ce3913664175e9197" },
   about: [
     ["(me)", "I have always been drawn to people who spot an opening where everyone else sees a dead end. A big idea is worth little until someone has the nerve to act on it, and acting on it is the part I enjoy most."],
     ["(now)", "As Marketing Manager at Annaizu, a UK immigration and compliance platform, I run SEO, AI search visibility, paid search, content and automation. Around 20% of the business now comes from qualified leads that search brings in."]
@@ -58,6 +58,8 @@ window.SITE = {
     { k: "Annaizu", t: "Keep the Licence", d: "A video game style reel that turns a surprise Home Office audit into a mission the HR team wins.", src: "assets/video/reel-annaizu.mp4", poster: "assets/img/reel-annaizu-poster.jpg" },
     { k: "VeggiGo, freelance", t: "86'd", d: "A kitchen ticket story for a friend's fresh produce supplier launching across central London.", src: "assets/video/reel-veggigo.mp4", poster: "assets/img/reel-veggigo-poster.jpg" }
   ],
+
+  reelsNote: "Each reel starts from a reference edit: its cut timing, transitions and pacing, rebuilt shot for shot around the brand's own story. Brand logos are blurred on this page.",
 
   writing: {
     k: "MAANAV", ver: "Shooting script, Kannada",

@@ -3,75 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Raghav: growth marketer, web developer and motion designer in London. Paper mode portfolio.">
-  <meta name="theme-color" content="#f1efe9">
+  <meta name="description" content="Manjunath (Raghav) Chandrashekar: marketing manager and AI automation specialist in London. Paper mode portfolio.">
+  <meta name="theme-color" content="#f4f2ee">
   <title>Manjunath (Raghav) Chandrashekar — Paper</title>
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    :root { --bg: #f1efe9; --fg: #111; --mute: #5e5d59; --line: rgba(0,0,0,.12); --acc: #e04f00 }
-    * { box-sizing: border-box; margin: 0; padding: 0 }
-    body { background: var(--bg); color: var(--fg); font: 17px/1.6 'Inter Tight', system-ui, sans-serif; -webkit-font-smoothing: antialiased }
-    a { color: inherit }
-    .mono { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--mute) }
-    .bar { position: sticky; top: 0; z-index: 5; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 12px 16px; background: rgba(241,239,233,.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line) }
-    .bar b { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .2em }
-    .mode { display: flex; border: 1px solid var(--fg) }
-    .mode > * { padding: 7px 12px; font: 11px/1 'JetBrains Mono', monospace; letter-spacing: .14em; text-transform: uppercase; text-decoration: none }
-    .mode .on { background: var(--fg); color: var(--bg) }
-    main { max-width: 760px; margin: 0 auto; padding: 64px 16px 96px }
-    h1 { font: 400 clamp(64px, 14vw, 132px)/.85 Anton, Impact, sans-serif; text-transform: uppercase; margin: 12px 0 20px }
-    h2 { font: 400 40px/1 Anton, Impact, sans-serif; text-transform: uppercase; margin: 72px 0 20px; padding-top: 18px; border-top: 2px solid var(--fg) }
-    h3 { font-size: 19px; font-weight: 600 }
-    p { margin: 0 0 14px }
-    .lead { font-size: 21px }
-    .me { width: 160px; aspect-ratio: 1; object-fit: cover; border-radius: 4px; margin-bottom: 20px }
-    .item { padding: 16px 0; border-bottom: 1px solid var(--line) }
-    .item p { color: var(--mute); margin: 4px 0 8px }
-    .tags { display: flex; flex-wrap: wrap; gap: 6px }
-    .tags span { font: 11px/1 'JetBrains Mono', monospace; padding: 6px 8px; border: 1px solid var(--line) }
-    .row { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line) }
-    .links a { margin-right: 18px }
-    footer { margin-top: 80px }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="paper.css?v=13">
+  <link rel="stylesheet" href="../css/player.css?v=13">
 </head>
 <body>
-  <div class="bar">
-    <b>RAGHAV / PAPER</b>
+  <div class="blob b1" aria-hidden="true"></div><div class="blob b2" aria-hidden="true"></div>
+  <nav class="nav" id="nav">
+    <a href="#home" class="nav-role mono" id="navRole"></a>
+    <div class="nav-links mono">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+    </div>
     <div class="mode" role="group" aria-label="Display mode"><a href="../" id="toAnim">Animated</a><span class="on" aria-current="true">Paper</span></div>
-  </div>
+  </nav>
   <main id="paper"></main>
-  <script src="../js/content.js?v=10"></script>
-  <script>
-    document.getElementById('toAnim').addEventListener('click', () => { try { localStorage.setItem('mode', 'animated'); } catch (_) {} });
-    const S = window.SITE;
-    const e = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-    const tags = (a) => `<div class="tags">${a.map((t) => `<span>${e(t)}</span>`).join('')}</div>`;
-    const name = `${S.first} ${S.last}`;
-    const P = (u) => /^https?:/.test(u) ? u : '../' + u;
-    document.getElementById('paper').innerHTML = `
-      <img class="me" src="../assets/img/me.jpg" alt="${e(S.preferred)}">
-      <p class="mono">${e(S.tagline)}</p>
-      <h1>${e(name)}</h1>
-      <p class="mono">Preferred name: <b>${e(S.preferred)}</b></p>
-      <p class="lead">${e(S.intro)}</p>
-      <p class="links mono">${e(S.origin)} · <a href="mailto:${e(S.email)}">${e(S.email)}</a> · ${S.socials.map((s) => `<a href="${e(s.url)}">${e(s.name)}</a>`).join(' · ')} · <a href="${P(S.cv)}">CV (PDF)</a></p>
-      <h2>About</h2>${S.about.map(([k, t]) => `<p>${e(t)}</p>`).join('')}
-      <h2>Experience</h2>${S.jobs.map((j) => `<div class="item"><div class="mono">${e(j.when)} · ${e(j.tag)}</div><h3>${e(j.r)}, ${e(j.o)}</h3><p>${e(j.d)}</p></div>`).join('')}
-      <div class="item"><div class="mono">Freelance</div>${S.freelance.map((f) => `<h3>${e(f.r)}, ${e(f.o)}</h3>`).join('')}</div>
-      <h2>Education</h2>${S.education.map((x) => `<div class="item"><div class="mono">${e(x.tag)}</div><h3>${e(x.school)}</h3><p>${e(x.course)}</p></div>`).join('')}
-      <h2>Languages</h2>${S.languages.map(([l, v]) => `<div class="row"><span>${e(l)}</span><span class="mono">${e(v)}</span></div>`).join('')}
-      <h2>Skills</h2>${S.skills.map((s) => `<div class="item"><h3>${e(s.t)}</h3><p>${e(s.d)}</p>${tags(s.tags)}</div>`).join('')}
-      <h2>Work</h2>${S.works.filter((w) => !w.pending).map((w) => `<div class="item"><div class="mono">${e(w.k)}</div><h3>${w.url ? `<a href="${e(w.url)}">${e(w.t)} ↗</a>` : e(w.t)}</h3><p>${e(w.d)}</p>${tags(w.tags)}</div>`).join('')}
-      <h2>Reels</h2>${S.reels.map((r) => `<div class="item"><div class="mono">${e(r.k)}</div><h3><a href="${P(r.src)}">${e(r.t)} ↗</a></h3><p>${e(r.d)}</p></div>`).join('')}
-      <h2>Writing</h2><div class="item"><h3><a href="${P(S.writing.pdf)}">${e(S.writing.t)} ↗</a></h3><p>${e(S.writing.d)}</p></div>
-      <h2>Certifications</h2>${tags(S.certs)}
-      <h2>Awards &amp; recognition</h2>${S.awards.map(([k, v]) => `<div class="row"><span>${e(v)}</span><span class="mono">${e(k)}</span></div>`).join('')}
-      <h2>Outside work</h2><p>${e(S.life.text)}</p>${tags(S.hobbies)}
-      <h2>Contact</h2><p><a href="mailto:${e(S.email)}">${e(S.email)}</a></p><p>On repeat: <a href="${e(S.music.url)}">${e(S.music.label)} on Spotify ↗</a></p>
-      <footer class="mono">© ${new Date().getFullYear()} ${e(name)}</footer>`;
-  </script>
+  <script src="../js/content.js?v=13"></script>
+  <script src="paper.js?v=13"></script>
+  <script src="../js/player.js?v=13"></script>
 </body>
 </html>

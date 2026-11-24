@@ -66,6 +66,7 @@
   let swarmReady = Promise.resolve();
   if (useSwarm) {
     window.__swarmGated = true;
+    window.__swarmTransparentBg = true;
     window.__swarmHooks = { end: () => goLive() };
     // The swarm scans the DOM while the loader covers the screen.
     swarmReady = track(new Promise((resolve) => {
@@ -108,6 +109,15 @@
     clearInterval(capT);
     const swarmOk = useSwarm && window.__swarmRebuild && window.__swarmRebuild.app && window.__swarmRebuild.app.engine && window.__swarmRebuild.app.engine.ready;
     if (useSwarm && !swarmOk) { try { window.__swarmRebuild && window.__swarmRebuild.stop(false); } catch (_) {} }
+    const host = document.querySelector('[data-swarm-rebuild]');
+    html.classList.add('hero-clean');
+    if (swarmOk) {
+      // the snapshot is taken; hide the real page (except the showreel) and the overlay until the build starts
+      html.classList.add('swarm-hide');
+      if (host) host.style.setProperty('opacity', '0', 'important');
+    } else if (!reduced) {
+      gsap.set('.hero-kicker, .hero-name .ln, .hero-bottom > *, .hero-side, .hud', { autoAlpha: 0 });
+    }
     keepLoaderOnTop();
     gsap.timeline()
       .to(shown, { v: 1, duration: .4, ease: 'power1.out', onUpdate: () => { counter.textContent = String(Math.round(shown.v * 100)).padStart(3, '0'); } })
@@ -115,25 +125,28 @@
       .to(AG.map((a) => a.el), { opacity: 0, duration: .3 }, '<')
       .to('#loader .l', { xPercent: -101, duration: 1.2, ease: 'expo.inOut', force3D: true })
       .to('#loader .r', { xPercent: 101, duration: 1.2, ease: 'expo.inOut', force3D: true }, '<')
+      .call(() => { html.classList.remove('locked'); status.textContent = 'showreel'; }, null, '-=.5')
+      .call(() => { gsap.killTweensOf(AG.map((a) => a.cur)); $('#loader').remove(); })
+      .to({}, { duration: reduced ? 0 : 3.6 }) // let the showreel breathe before anything is built over it
       .call(() => {
-        html.classList.remove('locked');
+        html.classList.remove('hero-clean');
         if (swarmOk) {
+          if (host) host.style.removeProperty('opacity');
           window.__swarmGated = false;
           status.textContent = 'swarm building';
           window.__swarmRebuild.app.engine.start();
-        }
-      }, null, '-=.5')
-      .call(() => { gsap.killTweensOf(AG.map((a) => a.cur)); $('#loader').remove(); if (!swarmOk) openingThenLive(); });
+        } else openingThenLive();
+      });
   }
 
   /* no swarm (mobile / reduced motion): a short type-in of the hero */
   function openingThenLive() {
     if (reduced) return goLive();
     gsap.timeline({ onComplete: goLive })
-      .from('.hero-tag', { opacity: 0, y: 12, duration: .5 })
-      .from('#heroVideo', { clipPath: 'inset(0 0 100% 0)', duration: 1, ease: 'expo.out' }, '<')
-      .from('.hero-name .ln', { yPercent: 110, opacity: 0, stagger: .08, duration: .9, ease: 'power4.out' }, '-=.6')
-      .from('.hero-bottom > *', { opacity: 0, y: 16, stagger: .1, duration: .6 }, '-=.5');
+      .to('.hud, .hero-side', { autoAlpha: 1, duration: .6 })
+      .fromTo('.hero-kicker', { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: .5 }, '<')
+      .fromTo('.hero-name .ln', { autoAlpha: 0, yPercent: 60 }, { autoAlpha: 1, yPercent: 0, stagger: .1, duration: .9, ease: 'power4.out' }, '-=.2')
+      .fromTo('.hero-bottom > *', { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, stagger: .1, duration: .6 }, '-=.5');
   }
 
   /* ---------- live site ---------- */
@@ -141,7 +154,7 @@
   function goLive() {
     if (live) return;
     live = true;
-    html.classList.remove('locked');
+    html.classList.remove('locked', 'swarm-hide', 'hero-clean');
     status.textContent = 'live';
     vid.play().catch(() => {});
     // secondary videos load only now, so they never compete with the swarm's scan

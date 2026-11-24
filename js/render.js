@@ -15,12 +15,12 @@
   const hero = `
   <section id="home">
     <div class="hero">
-      <figure class="hero-video" id="heroVideo">
+      <figure class="hero-video" id="heroVideo" data-swarm-skip>
         <video id="heroVid" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg"></video>
         <button class="snd mono" id="heroSound" type="button" aria-pressed="false">Sound off</button>
         <span class="rec mono"><i></i>Showreel — EVERYTHING*</span>
       </figure>
-      <div class="hero-shade"></div>
+      <div class="hero-shade" data-swarm-skip></div>
       <div class="hero-kicker"><p class="hero-pref mono">Call me <b>${esc(S.preferred)}</b></p><p class="hero-tag mono">${esc(S.tagline)}</p></div>
       <h1 class="hero-name" aria-label="${esc(fullName)}, known as ${esc(S.preferred)}"><span class="ln">${esc(S.first)}</span><span class="ln">${esc(S.last)}</span></h1>
       <div class="hero-bottom">
@@ -105,6 +105,11 @@
           <h3>${esc(r.t)}</h3>
           <p>${esc(r.d)}</p>
         </article>`).join('')}
+        <div class="reels-note">
+          <h3 class="h3m mono">/ How they are made</h3>
+          <p>${esc(S.reelsNote)}</p>
+          ${chips(['HyperFrames', 'Remotion', 'AI video', 'Sound design'])}
+        </div>
       </div>
     </div>
   </section>`;
@@ -180,6 +185,11 @@
     </div>
   </section>`;
 
+  const player = `
+  <section id="music" class="np-band">
+    <div class="wrap"><div class="np" data-player></div></div>
+  </section>`;
+
   const contact = `
   <section id="contact" class="scene">
     <div class="ghost" aria-hidden="true">HI</div>
@@ -209,7 +219,7 @@
     <div class="wrap"><div class="copy mono"><span>© ${new Date().getFullYear()} ${esc(fullName)}</span><span>${esc(S.origin)}</span></div></div>
   </footer>`;
 
-  document.getElementById('app').innerHTML = hero + about + skills + work + reels + phil + exp + writing + life + contact;
+  document.getElementById('app').innerHTML = hero + about + skills + work + reels + phil + exp + writing + life + player + contact;
 
   // per-video sound toggles (reels)
   document.querySelectorAll('.reel-v').forEach((f) => {
