@@ -78,7 +78,7 @@ window.SITE = {
   now: ["AI search", "Marketing automation", "Google Ads", "Remotion", "Strength training"],
 
   jobs: [
-    { r: "Marketing Manager", o: "Annaizu", when: "Jan 2026 – Present", d: "Lead SEO, AI search, paid media, email marketing and automation, running the lead pipeline end to end. Promoted from Marketing Executive (Jun 2025 – Dec 2025).", tag: "London" },
+    { r: "Marketing Manager", o: "Annaizu", when: "Jan 2026 – Present", d: "Lead SEO, AI search, paid media, email marketing and automation, running the lead pipeline end to end. Promoted from Marketing Executive (Jan 2025 – Dec 2025).", tag: "London" },
     { r: "Sales Associate", o: "Greene King", when: "Oct 2024 – Mar 2025", d: "Brand and promotional strategy, reels and content, offline marketing with banners and posters, offer pricing, events and guest communication.", tag: "London" },
     { r: "Marketing Executive", o: "Bharathi Associates", when: "Oct 2022 – Sep 2023", d: "Digital campaigns and growth marketing for an industrial equipment supplier, plus the company website.", tag: "India" },
     { r: "Marketing Associate", o: "Urban Company", when: "Mar 2022 – Aug 2022", d: "SEO copywriting, Google Ads and PPC support, and marketing creatives for a home services platform.", tag: "India" },
