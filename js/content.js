@@ -12,8 +12,7 @@ window.SITE = {
   cv: "assets/docs/Manjunath-Chandrashekar-CV.pdf",
   email: "manj6911@gmail.com",
   socials: [
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/manjunath-chandrashekar78/", handle: "manjunath-chandrashekar78" },
-    { name: "GitHub", url: "https://github.com/raghav685", handle: "@raghav685" }
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/manjunath-chandrashekar78/", handle: "manjunath-chandrashekar78" }
   ],
 
   music: { name: "Spotify", label: "Lose Yourself, Eminem", title: "Lose Yourself", artist: "Eminem", album: "8 Mile soundtrack", length: "5:26", uri: "spotify:track:3u0W3gJQNV5gegMmntzby8", url: "https://open.spotify.com/track/3u0W3gJQNV5gegMmntzby8", art: "https://i.scdn.co/image/ab67616d0000b273d2a9744ce3913664175e9197" },
@@ -40,7 +39,7 @@ window.SITE = {
     { t: "Copywriting", d: "Long form articles, newsletters, landing pages, ad copy and LinkedIn posts, written to rank, get cited by AI and convert.", tags: ["Blogs", "Newsletters", "Landing pages", "LinkedIn"] },
     { t: "Design", d: "Brand consistent social posts, ads, print and presentation material.", tags: ["Adobe Photoshop", "Adobe InDesign", "Canva"] },
     { t: "Motion & video", d: "Reels, brand films and product videos, mixing AI generated footage with code driven edits.", tags: ["Remotion", "HyperFrames", "Premiere", "AI video"] },
-    { t: "Web development", d: "Fast, animated marketing sites from first design to launch, plus CMS builds and migrations.", tags: ["HTML/CSS/JS", "GSAP", "Webflow", "Hostinger"] },
+    { t: "Web development", d: "Fast marketing sites and data driven web apps, from first design to launch, with the databases and hosting behind them.", tags: ["HTML/CSS/JS", "GSAP", "Webflow", "Firebase", "Aiven", "Vercel", "IONOS"] },
     { t: "Product & research", d: "Competitor analysis, product requirement documents and roadmaps that turn market gaps into features.", tags: ["PRDs", "Roadmaps", "Market research"] },
     { t: "CRM & lead generation", d: "Lead sourcing, enrichment, list imports and nurturing that keep the sales pipeline moving.", tags: ["Zoho CRM", "HubSpot", "Lusha"] }
   ],
@@ -50,6 +49,7 @@ window.SITE = {
     { k: "Annaizu", t: "2.6x more referring domains", d: "Grew referring domains from 34 to 89 in a year, with 234 new backlinks in a single month, and earned a link from the Home Office's own DBS directory (domain authority 69). Measured with an OpenSEO audit.", tags: ["OpenSEO", "Link building", "Digital PR"], img: "assets/img/work-annaizu-links.jpg", url: "" },
     { k: "Annaizu, copywriting", t: "500+ articles written", d: "The blog and newsletter behind Annaizu's search growth: more than 500 articles on sponsorship, immigration, DBS checks and workforce compliance, written for UK employers.", tags: ["Copywriting", "Blog", "Newsletter"], img: "assets/img/work-annaizu-blog.jpg", url: "https://www.annaizu.com/blog", cta: "Read the blog" },
     { k: "Annaizu, built by me", t: "Annaizu website", d: "The marketing site for a UK workforce management and compliance platform, covering sponsorship compliance, immigration services, rota, onboarding and DBS checks.", tags: ["Web development", "Webflow", "SEO"], img: "assets/img/work-annaizu-site.jpg", url: "https://www.annaizu.com/" },
+    { k: "Annaizu, built by me", t: "UK sponsor licence checker", d: "A searchable mirror of the GOV.UK register of 127,310 licensed sponsors, built end to end by me. A scheduled job pulls the government data every day and refreshes the site automatically.", tags: ["Data pipeline", "Daily sync", "Web app"], img: "assets/img/work-sponsorlist.jpg", url: "https://uk-tier2sponsorlist.annaizu.com/" },
     { k: "Freelance, built by me", t: "Bharathi Associates", d: "Website for an industrial equipment supplier of pumps, blowers and diffusers for wastewater treatment projects.", tags: ["Web development", "Anime.js"], img: "assets/img/work-bharathi.jpg", url: "https://bharathi-associates.com/" },
     { k: "Personal, built by me", t: "Baba Yaga Fitness", d: "A training web app with an exercise library of 873 movements, workout logging, programmes and progress tracking.", tags: ["Web app", "Fitness"], img: "assets/img/work-fitness.jpg", url: "https://palegreen-oyster-544450.hostingersite.com/" }
   ],

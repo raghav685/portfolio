@@ -9,7 +9,7 @@
   const useSwarm = !reduced && innerWidth >= 760 && !params.has('noswarm');
 
   /* ---------- mode toggle ---------- */
-  $$('[data-mode="paper"]').forEach((a) => a.addEventListener('click', () => { try { localStorage.setItem('mode', 'paper'); } catch (_) {} }));
+  $$('[data-mode="paper"]').forEach((a) => a.addEventListener('click', () => { try { sessionStorage.setItem('mode', 'paper'); } catch (_) {} }));
 
   /* ---------- hero video ---------- */
   const vid = $('#heroVid');

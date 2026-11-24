@@ -17,7 +17,7 @@
   };
   const name = `${S.first} ${S.last}`;
   document.getElementById('navRole').textContent = 'Marketing Manager';
-  document.getElementById('toAnim').addEventListener('click', () => { try { localStorage.setItem('mode', 'animated'); } catch (_) {} });
+  document.getElementById('toAnim').addEventListener('click', () => { try { sessionStorage.setItem('mode', 'animated'); } catch (_) {} });
 
   const hero = `
   <section id="home" class="hero">
@@ -30,7 +30,6 @@
         <div class="cta rv">
           <a class="btn" href="${e(P(S.cv))}" target="_blank" rel="noopener">Get CV →</a>
           <a class="ico" href="${e(S.socials[0].url)}" target="_blank" rel="noopener" aria-label="LinkedIn">${I.in}</a>
-          <a class="ico" href="${e(S.socials[1].url)}" target="_blank" rel="noopener" aria-label="GitHub">${I.gh}</a>
           <a class="ico" href="mailto:${e(S.email)}" aria-label="Email">${I.mail}</a>
         </div>
       </div>
@@ -158,7 +157,6 @@
 
   const rows = [
     { i: I.in, t: 'LinkedIn', s: S.socials[0].handle, u: S.socials[0].url },
-    { i: I.gh, t: 'GitHub', s: S.socials[1].handle, u: S.socials[1].url },
     { i: I.mail, t: 'Email', s: S.email, u: `mailto:${S.email}` },
     { i: I.doc, t: 'CV', s: 'PDF, one page', u: P(S.cv) },
     { i: I.music, t: 'Spotify', s: S.music.label, u: S.music.url }
@@ -176,7 +174,7 @@
   <footer class="foot"><div class="wrap mono"><span>© ${new Date().getFullYear()} ${e(name)}</span><a href="../" class="acc" id="toAnim2">Animated mode ↗</a></div></footer>`;
 
   document.getElementById('paper').innerHTML = hero + about + skills + work + phil + exp + life + writing + player + contact;
-  document.getElementById('toAnim2').addEventListener('click', () => { try { localStorage.setItem('mode', 'animated'); } catch (_) {} });
+  document.getElementById('toAnim2').addEventListener('click', () => { try { sessionStorage.setItem('mode', 'animated'); } catch (_) {} });
 
   // reveal on scroll
   const els = document.querySelectorAll('.rv');
