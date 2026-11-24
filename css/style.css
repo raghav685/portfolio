@@ -124,12 +124,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .sk h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(30px, 3vw, 44px); line-height: .95 }
 .sk p { color: var(--mute) }
 
-.pj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px 40px }
-.pj.wide { grid-column: 1 / -1 }
+.pj-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px 18px }
 .pj { display: grid; gap: 14px; align-content: start }
 .pj .chips { margin-top: 4px }
 .pj-media { display: block; overflow: hidden; border: 1px solid var(--line); background: #0d0d0d; aspect-ratio: 16 / 10 }
-.pj.wide .pj-media { aspect-ratio: 21 / 9 }
 .pj-media img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .8s cubic-bezier(.2, .7, .2, 1) }
 .pj-media:hover img { transform: scale(1.03) }
 .pj-media .ph { width: 100%; height: 100%; display: grid; place-content: center; gap: 10px; text-align: center; color: var(--dim); background: repeating-linear-gradient(135deg, #0d0d0d 0 14px, #121212 14px 28px) }
@@ -137,7 +135,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .pj-media .ph em { font-style: normal; color: var(--acc) }
 .pj-meta { display: flex; justify-content: space-between; color: var(--dim) }
 .pj-meta a { color: var(--acc) }
-.pj h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(32px, 3.6vw, 52px); line-height: .95 }
+.pj h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(30px, 2.6vw, 40px); line-height: .95 }
 .pj p { color: var(--mute); max-width: 620px }
 
 .quote { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(54px, 9.5vw, 150px); line-height: .9; max-width: 14ch }
@@ -219,7 +217,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* responsive */
 @media (max-width: 1100px) { .hud nav { display: none } }
 @media (max-width: 900px) {
-  .about, .cols2, .exp, .life, .links, .pj-grid, .book { grid-template-columns: 1fr }
+  .about, .cols2, .exp, .life, .links, .book { grid-template-columns: 1fr }
+  .pj-grid { grid-template-columns: 1fr 1fr }
   .reels { grid-template-columns: minmax(0, 380px) }
   .sk-grid { grid-template-columns: 1fr 1fr }
   .hero-side { display: none }
@@ -231,10 +230,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .hero-video .rec { display: none }
   .hero-video .snd { top: 92px }
   .hero { padding-top: 140px }
-  .sk-grid { grid-template-columns: 1fr }
+  .sk-grid, .pj-grid { grid-template-columns: 1fr }
   .sk { min-height: 0 }
   .hud { padding-left: 14px }
   .hud .logo { font-size: 10px; letter-spacing: .12em }
-  .pj.wide .pj-media { aspect-ratio: 16 / 10 }
 }
 @media (prefers-reduced-motion: reduce) { .grain, .trk { animation: none } }

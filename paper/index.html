@@ -43,7 +43,7 @@
     <div class="mode" role="group" aria-label="Display mode"><a href="../" id="toAnim">Animated</a><span class="on" aria-current="true">Paper</span></div>
   </div>
   <main id="paper"></main>
-  <script src="../js/content.js?v=9"></script>
+  <script src="../js/content.js?v=10"></script>
   <script>
     document.getElementById('toAnim').addEventListener('click', () => { try { localStorage.setItem('mode', 'animated'); } catch (_) {} });
     const S = window.SITE;
@@ -70,7 +70,7 @@
       <h2>Certifications</h2>${tags(S.certs)}
       <h2>Awards &amp; recognition</h2>${S.awards.map(([k, v]) => `<div class="row"><span>${e(v)}</span><span class="mono">${e(k)}</span></div>`).join('')}
       <h2>Outside work</h2><p>${e(S.life.text)}</p>${tags(S.hobbies)}
-      <h2>Contact</h2><p><a href="mailto:${e(S.email)}">${e(S.email)}</a></p>
+      <h2>Contact</h2><p><a href="mailto:${e(S.email)}">${e(S.email)}</a></p><p>On repeat: <a href="${e(S.music.url)}">${e(S.music.label)} on Spotify ↗</a></p>
       <footer class="mono">© ${new Date().getFullYear()} ${e(name)}</footer>`;
   </script>
 </body>

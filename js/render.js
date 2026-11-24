@@ -100,7 +100,7 @@
       <div class="reels">
         ${S.reels.map((r, i) => `
         <article class="reel">
-          <figure class="reel-v"><video src="${esc(r.src)}" muted loop playsinline autoplay preload="metadata"></video><button class="snd mono" type="button" aria-pressed="false">Sound off</button></figure>
+          <figure class="reel-v"><video data-src="${esc(r.src)}" poster="${esc(r.poster)}" muted loop playsinline preload="none"></video><button class="snd mono" type="button" aria-pressed="false">Sound off</button></figure>
           <div class="pj-meta mono"><span>${pad(i + 1)} — ${esc(r.k)}</span><span>9:16</span></div>
           <h3>${esc(r.t)}</h3>
           <p>${esc(r.d)}</p>
@@ -168,7 +168,7 @@
     <div class="wrap">
       ${head('Discipline, outside of work', 'My life')}
       <div class="life">
-        <figure class="media clip"><video src="${esc(L.clip)}" poster="${esc(L.poster)}" muted loop playsinline autoplay preload="metadata"></video><span class="rec mono"><i></i>Deadlift — graded</span></figure>
+        <figure class="media clip"><video data-src="${esc(L.clip)}" poster="${esc(L.poster)}" muted loop playsinline preload="none"></video><span class="rec mono"><i></i>Deadlift — graded</span></figure>
         <div class="life-col">
           <div class="life-copy">
             <h3 class="big">${esc(L.title)}</h3>
@@ -190,6 +190,7 @@
         <div>
           ${S.socials.map((s) => `<a class="lnk"${ext(s.url)}><span>${esc(s.name)}</span><span class="mono">${esc(s.handle)} ↗</span></a>`).join('')}
           <a class="lnk" href="${esc(S.cv)}" target="_blank" rel="noopener"><span>CV</span><span class="mono">PDF ↗</span></a>
+          <a class="lnk"${ext(S.music.url)}><span>${esc(S.music.name)}</span><span class="mono">${esc(S.music.label)} ↗</span></a>
         </div>
         <div><h3 class="h3m mono">/ Hobbies</h3>${chips(S.hobbies)}</div>
       </div>
@@ -216,7 +217,7 @@
     b.addEventListener('click', () => {
       document.querySelectorAll('video').forEach((o) => { if (o !== v) o.muted = true; });
       document.querySelectorAll('.snd').forEach((o) => { if (o !== b) { o.setAttribute('aria-pressed', 'false'); o.textContent = 'Sound off'; } });
-      v.muted = !v.muted; if (!v.muted) v.play().catch(() => {});
+      if (!v.src && v.dataset.src) v.src = v.dataset.src; v.muted = !v.muted; if (!v.muted) v.play().catch(() => {});
       b.setAttribute('aria-pressed', String(!v.muted)); b.textContent = v.muted ? 'Sound off' : 'Sound on';
     });
   });

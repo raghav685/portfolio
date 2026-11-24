@@ -77,7 +77,7 @@
         const poll = () => {
           const app = window.__swarmRebuild && window.__swarmRebuild.app;
           if (app && app.engine && app.engine.ready) resolve(true);
-          else if (performance.now() - t0 > 9000) resolve(false);
+          else if (performance.now() - t0 > 25000) resolve(false);
           else setTimeout(poll, 80);
         };
         poll();
@@ -144,6 +144,14 @@
     html.classList.remove('locked');
     status.textContent = 'live';
     vid.play().catch(() => {});
+    // secondary videos load only now, so they never compete with the swarm's scan
+    const lazy = $$('video[data-src]');
+    const io = new IntersectionObserver((es) => es.forEach((e) => {
+      const v = e.target;
+      if (e.isIntersecting) { if (!v.src) v.src = v.dataset.src; v.play().catch(() => {}); }
+      else if (v.src) v.pause();
+    }), { rootMargin: '200px' });
+    lazy.forEach((v) => io.observe(v));
     gsap.registerPlugin(ScrollTrigger);
     // reveal anything still below the fold (the swarm may have been skipped early)
     const fold = scrollY + innerHeight;
